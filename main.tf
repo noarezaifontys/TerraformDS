@@ -70,72 +70,72 @@ resource "azurerm_network_security_group" "AKSsg" {
   resource_group_name = data.azurerm_resource_group.main.name
 }
 
-#Define security rules
-resource "azurerm_network_security_rule" "AgentToFleet" {
-      name                        = "AgentToFleet"
-      priority                    = 100
-      direction                   = "Inbound"
-      access                      = "Allow"
-      protocol                    = "Tcp"
-      source_port_range           = "*"
-      destination_port_range      = "8220"
-      source_address_prefix       = "*"
-      destination_address_prefix  = "*"
-      resource_group_name         = data.azurerm_resource_group.main.name
-      network_security_group_name = azurerm_network_security_group.AKSsg.name
-}
-resource "azurerm_network_security_rule" "AgentToElastic" {
-      name                        = "AgentToElastic"
-      priority                    = 101
-      direction                   = "Inbound"
-      access                      = "Allow"
-      protocol                    = "Tcp"
-      source_port_range           = "*"
-      destination_port_range      = "9200"
-      source_address_prefix       = "*"
-      destination_address_prefix  = "*"
-      resource_group_name         = data.azurerm_resource_group.main.name
-      network_security_group_name = azurerm_network_security_group.AKSsg.name
-}
-resource "azurerm_network_security_rule" "AgentToLogtash" {
-      name                        = "AgentToLogtash"
-      priority                    = 102
-      direction                   = "Inbound"
-      access                      = "Allow"
-      protocol                    = "Tcp"
-      source_port_range           = "*"
-      destination_port_range      = "5044"
-      source_address_prefix       = "*"
-      destination_address_prefix  = "*"
-      resource_group_name         = data.azurerm_resource_group.main.name
-      network_security_group_name = azurerm_network_security_group.AKSsg.name
-}
-resource "azurerm_network_security_rule" "AgentToKibanaWhenFleet" {
-      name                        = "AgentToKibanaWhenFleet"
-      priority                    = 103
-      direction                   = "Inbound"
-      access                      = "Allow"
-      protocol                    = "Tcp"
-      source_port_range           = "*"
-      destination_port_range      = "5601"
-      source_address_prefix       = "*"
-      destination_address_prefix  = "*"
-      resource_group_name         = data.azurerm_resource_group.main.name
-      network_security_group_name = azurerm_network_security_group.AKSsg.name
-}
-resource "azurerm_network_security_rule" "FleetToElastic" {
-      name                        = "FleetToElastic"
-      priority                    = 104
-      direction                   = "Inbound"
-      access                      = "Allow"
-      protocol                    = "Tcp"
-      source_port_range           = "*"
-      destination_port_range      = "9200"
-      source_address_prefix       = "*"
-      destination_address_prefix  = "*"
-      resource_group_name         = data.azurerm_resource_group.main.name
-      network_security_group_name = azurerm_network_security_group.AKSsg.name
-}
+# #Define security rules
+# resource "azurerm_network_security_rule" "AgentToFleet" {
+#       name                        = "AgentToFleet"
+#       priority                    = 100
+#       direction                   = "Inbound"
+#       access                      = "Allow"
+#       protocol                    = "Tcp"
+#       source_port_range           = "*"
+#       destination_port_range      = "8220"
+#       source_address_prefix       = "*"
+#       destination_address_prefix  = "*"
+#       resource_group_name         = data.azurerm_resource_group.main.name
+#       network_security_group_name = azurerm_network_security_group.AKSsg.name
+# }
+# resource "azurerm_network_security_rule" "AgentToElastic" {
+#       name                        = "AgentToElastic"
+#       priority                    = 101
+#       direction                   = "Inbound"
+#       access                      = "Allow"
+#       protocol                    = "Tcp"
+#       source_port_range           = "*"
+#       destination_port_range      = "9200"
+#       source_address_prefix       = "*"
+#       destination_address_prefix  = "*"
+#       resource_group_name         = data.azurerm_resource_group.main.name
+#       network_security_group_name = azurerm_network_security_group.AKSsg.name
+# }
+# resource "azurerm_network_security_rule" "AgentToLogtash" {
+#       name                        = "AgentToLogtash"
+#       priority                    = 102
+#       direction                   = "Inbound"
+#       access                      = "Allow"
+#       protocol                    = "Tcp"
+#       source_port_range           = "*"
+#       destination_port_range      = "5044"
+#       source_address_prefix       = "*"
+#       destination_address_prefix  = "*"
+#       resource_group_name         = data.azurerm_resource_group.main.name
+#       network_security_group_name = azurerm_network_security_group.AKSsg.name
+# }
+# resource "azurerm_network_security_rule" "AgentToKibanaWhenFleet" {
+#       name                        = "AgentToKibanaWhenFleet"
+#       priority                    = 103
+#       direction                   = "Inbound"
+#       access                      = "Allow"
+#       protocol                    = "Tcp"
+#       source_port_range           = "*"
+#       destination_port_range      = "5601"
+#       source_address_prefix       = "*"
+#       destination_address_prefix  = "*"
+#       resource_group_name         = data.azurerm_resource_group.main.name
+#       network_security_group_name = azurerm_network_security_group.AKSsg.name
+# }
+# resource "azurerm_network_security_rule" "FleetToElastic" {
+#       name                        = "FleetToElastic"
+#       priority                    = 104
+#       direction                   = "Inbound"
+#       access                      = "Allow"
+#       protocol                    = "Tcp"
+#       source_port_range           = "*"
+#       destination_port_range      = "9200"
+#       source_address_prefix       = "*"
+#       destination_address_prefix  = "*"
+#       resource_group_name         = data.azurerm_resource_group.main.name
+#       network_security_group_name = azurerm_network_security_group.AKSsg.name
+# }
 resource "azurerm_network_security_rule" "ssh_sr" {
       name                        = "ssh"
       priority                    = 105
@@ -158,13 +158,13 @@ resource "azurerm_subnet" "aks_subnet" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-# Define Subnet for Agents
-resource "azurerm_subnet" "agent_subnet" {
-  name                 = "agent-subnet"
-  resource_group_name  = data.azurerm_resource_group.main.name
-  virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.2.0/24"]
-}
+# # Define Subnet for Agents
+# resource "azurerm_subnet" "agent_subnet" {
+#   name                 = "agent-subnet"
+#   resource_group_name  = data.azurerm_resource_group.main.name
+#   virtual_network_name = azurerm_virtual_network.vnet.name
+#   address_prefixes     = ["10.0.2.0/24"]
+# }
 
 #Associate subnet with Security Group
 resource "azurerm_subnet_network_security_group_association" "aks_subnet_nsg_assoc" {
@@ -172,155 +172,155 @@ resource "azurerm_subnet_network_security_group_association" "aks_subnet_nsg_ass
   network_security_group_id = azurerm_network_security_group.AKSsg.id
 }
 
-#Associate subnet with Security Group
-resource "azurerm_subnet_network_security_group_association" "agents_subnet_nsg_assoc" {
-  subnet_id                 = azurerm_subnet.agent_subnet.id
-  network_security_group_id = azurerm_network_security_group.AKSsg.id
-}
+# #Associate subnet with Security Group
+# resource "azurerm_subnet_network_security_group_association" "agents_subnet_nsg_assoc" {
+#   subnet_id                 = azurerm_subnet.agent_subnet.id
+#   network_security_group_id = azurerm_network_security_group.AKSsg.id
+# }
 
-# Create a public IP address fleetVM
-resource "azurerm_public_ip" "fleet_public_ip" {
-  name = "FleetPubIP"
-  resource_group_name = data.azurerm_resource_group.main.name
-  location = "West Europe"
-  allocation_method = "Static"
-}
+# # Create a public IP address fleetVM
+# resource "azurerm_public_ip" "fleet_public_ip" {
+#   name = "FleetPubIP"
+#   resource_group_name = data.azurerm_resource_group.main.name
+#   location = "West Europe"
+#   allocation_method = "Static"
+# }
 
-# Create a public IP address agentVM
-resource "azurerm_public_ip" "agent_public_ip" {
-  name = "AgentPubIP"
-  resource_group_name = data.azurerm_resource_group.main.name
-  location = "West Europe"
-  allocation_method = "Static"
-}
+# # Create a public IP address agentVM
+# resource "azurerm_public_ip" "agent_public_ip" {
+#   name = "AgentPubIP"
+#   resource_group_name = data.azurerm_resource_group.main.name
+#   location = "West Europe"
+#   allocation_method = "Static"
+# }
 
-# Setup SSH
-resource "local_file" "create_ssh_folder" {
-  filename = "./ssh/.placeholder"
-  content  = ""
-}
+# # Setup SSH
+# resource "local_file" "create_ssh_folder" {
+#   filename = "./ssh/.placeholder"
+#   content  = ""
+# }
 
-# Generate SSH Key for Fleet VM
-resource "tls_private_key" "fleet_vm_key" {
-  algorithm = "RSA"
-  rsa_bits  = 2048
-}
+# # Generate SSH Key for Fleet VM
+# resource "tls_private_key" "fleet_vm_key" {
+#   algorithm = "RSA"
+#   rsa_bits  = 2048
+# }
 
-resource "local_file" "fleet_vm_private_key" {
-  depends_on = [local_file.create_ssh_folder]
-  filename   = "./ssh/fleet_vm_id_rsa"
-  content    = tls_private_key.fleet_vm_key.private_key_pem
-  file_permission = "0600"
-}
+# resource "local_file" "fleet_vm_private_key" {
+#   depends_on = [local_file.create_ssh_folder]
+#   filename   = "./ssh/fleet_vm_id_rsa"
+#   content    = tls_private_key.fleet_vm_key.private_key_pem
+#   file_permission = "0600"
+# }
 
-resource "local_file" "fleet_vm_public_key" {
-  depends_on = [local_file.create_ssh_folder]
-  filename   = "./ssh/fleet_vm_id_rsa.pub"
-  content    = tls_private_key.fleet_vm_key.public_key_openssh
-}
+# resource "local_file" "fleet_vm_public_key" {
+#   depends_on = [local_file.create_ssh_folder]
+#   filename   = "./ssh/fleet_vm_id_rsa.pub"
+#   content    = tls_private_key.fleet_vm_key.public_key_openssh
+# }
 
-# Generate SSH Key for Agent VM
-resource "tls_private_key" "agent_vm_key" {
-  algorithm = "RSA"
-  rsa_bits  = 2048
-}
+# # Generate SSH Key for Agent VM
+# resource "tls_private_key" "agent_vm_key" {
+#   algorithm = "RSA"
+#   rsa_bits  = 2048
+# }
 
-resource "local_file" "agent_vm_private_key" {
-  depends_on = [local_file.create_ssh_folder]
-  filename   = "./ssh/agent_vm_id_rsa"
-  content    = tls_private_key.agent_vm_key.private_key_pem
-  file_permission = "0600"
-}
+# resource "local_file" "agent_vm_private_key" {
+#   depends_on = [local_file.create_ssh_folder]
+#   filename   = "./ssh/agent_vm_id_rsa"
+#   content    = tls_private_key.agent_vm_key.private_key_pem
+#   file_permission = "0600"
+# }
 
-resource "local_file" "agent_vm_public_key" {
-  depends_on = [local_file.create_ssh_folder]
-  filename   = "./ssh/agent_vm_id_rsa.pub"
-  content    = tls_private_key.agent_vm_key.public_key_openssh
-}
+# resource "local_file" "agent_vm_public_key" {
+#   depends_on = [local_file.create_ssh_folder]
+#   filename   = "./ssh/agent_vm_id_rsa.pub"
+#   content    = tls_private_key.agent_vm_key.public_key_openssh
+# }
 
 # Setup Agent & Fleet VM + network interfaces 
 
-# Network Interface for the AKS VM
-resource "azurerm_network_interface" "fleet_vm_nic" {
-  name                = "fleet-vm-nic"
-  location            = data.azurerm_resource_group.main.location
-  resource_group_name = data.azurerm_resource_group.main.name
+# # Network Interface for the AKS VM
+# resource "azurerm_network_interface" "fleet_vm_nic" {
+#   name                = "fleet-vm-nic"
+#   location            = data.azurerm_resource_group.main.location
+#   resource_group_name = data.azurerm_resource_group.main.name
 
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_subnet.aks_subnet.id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.fleet_public_ip.id
-  }
-}
+#   ip_configuration {
+#     name                          = "internal"
+#     subnet_id                     = azurerm_subnet.aks_subnet.id
+#     private_ip_address_allocation = "Dynamic"
+#     public_ip_address_id          = azurerm_public_ip.fleet_public_ip.id
+#   }
+# }
 
-# AKS VM
-resource "azurerm_linux_virtual_machine" "fleet_vm" {
-  name                = "fleet-vm"
-  location            = data.azurerm_resource_group.main.location
-  resource_group_name = data.azurerm_resource_group.main.name
-  size                = "Standard_B1s"
-  admin_username      = "azureuser"
-  admin_ssh_key {
-    username   = "azureuser"
-    public_key = tls_private_key.fleet_vm_key.public_key_openssh
-  }
-  network_interface_ids = [azurerm_network_interface.fleet_vm_nic.id]
+# # AKS VM
+# resource "azurerm_linux_virtual_machine" "fleet_vm" {
+#   name                = "fleet-vm"
+#   location            = data.azurerm_resource_group.main.location
+#   resource_group_name = data.azurerm_resource_group.main.name
+#   size                = "Standard_B1s"
+#   admin_username      = "azureuser"
+#   admin_ssh_key {
+#     username   = "azureuser"
+#     public_key = tls_private_key.fleet_vm_key.public_key_openssh
+#   }
+#   network_interface_ids = [azurerm_network_interface.fleet_vm_nic.id]
 
-  source_image_reference {
-    publisher = "Canonical"
-    offer     = "ubuntu-24_04-lts"
-    sku       = "server"
-    version   = "latest"
-  }
+#   source_image_reference {
+#     publisher = "Canonical"
+#     offer     = "ubuntu-24_04-lts"
+#     sku       = "server"
+#     version   = "latest"
+#   }
 
-  os_disk {
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
-    disk_size_gb         = 30
-  }
-}
+#   os_disk {
+#     caching              = "ReadWrite"
+#     storage_account_type = "Standard_LRS"
+#     disk_size_gb         = 30
+#   }
+# }
 
-# Network Interface for the Agent VM
-resource "azurerm_network_interface" "agent_vm_nic" {
-  name                = "agent-vm-nic"
-  location            = data.azurerm_resource_group.main.location
-  resource_group_name = data.azurerm_resource_group.main.name
+# # Network Interface for the Agent VM
+# resource "azurerm_network_interface" "agent_vm_nic" {
+#   name                = "agent-vm-nic"
+#   location            = data.azurerm_resource_group.main.location
+#   resource_group_name = data.azurerm_resource_group.main.name
 
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_subnet.agent_subnet.id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.agent_public_ip.id
-  }
-}
+#   ip_configuration {
+#     name                          = "internal"
+#     subnet_id                     = azurerm_subnet.agent_subnet.id
+#     private_ip_address_allocation = "Dynamic"
+#     public_ip_address_id          = azurerm_public_ip.agent_public_ip.id
+#   }
+# }
 
-# Agent VM
-resource "azurerm_linux_virtual_machine" "agent_vm" {
-  name                = "agent-vm"
-  location            = data.azurerm_resource_group.main.location
-  resource_group_name = data.azurerm_resource_group.main.name
-  size                = "Standard_B1s"
-  admin_username      = "azureuser"
-  admin_ssh_key {
-    username   = "azureuser"
-    public_key = tls_private_key.agent_vm_key.public_key_openssh
-  }
-  network_interface_ids = [azurerm_network_interface.agent_vm_nic.id]
+# # Agent VM
+# resource "azurerm_linux_virtual_machine" "agent_vm" {
+#   name                = "agent-vm"
+#   location            = data.azurerm_resource_group.main.location
+#   resource_group_name = data.azurerm_resource_group.main.name
+#   size                = "Standard_B1s"
+#   admin_username      = "azureuser"
+#   admin_ssh_key {
+#     username   = "azureuser"
+#     public_key = tls_private_key.agent_vm_key.public_key_openssh
+#   }
+#   network_interface_ids = [azurerm_network_interface.agent_vm_nic.id]
 
-  source_image_reference {
-    publisher = "Canonical"
-    offer     = "ubuntu-24_04-lts"
-    sku       = "server"
-    version   = "latest"
-  }
+#   source_image_reference {
+#     publisher = "Canonical"
+#     offer     = "ubuntu-24_04-lts"
+#     sku       = "server"
+#     version   = "latest"
+#   }
 
-  os_disk {
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
-    disk_size_gb         = 30
-  }
-}
+#   os_disk {
+#     caching              = "ReadWrite"
+#     storage_account_type = "Standard_LRS"
+#     disk_size_gb         = 30
+#   }
+# }
 
 # Deploy Elasticsearch, Kibana and Logstash on the Kubernetes cluster =========================================================================================================
 
@@ -509,17 +509,15 @@ resource "kubernetes_config_map" "elasticsearch_config" {
 
 # resource "kubernetes_config_map" "kibana_config" {
 #   metadata {
-#     name = "kibana-config"
+#     name      = "kibana-config"
 #     namespace = "default"
 #   }
-
+ 
 #   data = {
 #     "kibana.yml" = <<EOT
-# server.name: kibana
-# server.host: "0.0.0.0"
-# elasticsearch.hosts: [ "http://elasticsearch-alt:9200" ]
 # xpack.security.enabled: false
-#     EOT
+# elasticsearch.ssl.verificationMode: none
+# EOT
 #   }
 # }
 
@@ -639,6 +637,17 @@ resource "kubernetes_deployment" "kibana" {
               memory = "2Gi"    # cap at 2 GiB RAM
             }
           }
+        #   volume_mount {
+        #     name       = "kibana-config"
+        #     mount_path = "/usr/share/kibana/config/kibana.yml"
+        #     sub_path   = "kibana.yml"
+        #   }
+        # }
+        #   volume {
+        #   name = "kibana-config"
+        #   config_map {
+        #     name = kubernetes_config_map.kibana_config.metadata[0].name
+        #   }
         }
       }
     }
@@ -739,8 +748,27 @@ resource "kubernetes_service" "kibana" {
   }
 }
 
-# ELK Stack Classic Kubernetes Resources ===============================================================================================
+resource "kubernetes_service" "logstash" {
+  metadata {
+    name      = "logstash"
+    namespace = "default"
+  }
 
+  spec {
+    type = "LoadBalancer"
+
+    selector = {
+      app = "logstash"
+    }
+
+    port {
+      port        = 9600
+      target_port = 9600
+    }
+  }
+}
+
+# ELK Stack Classic Kubernetes Resources ===============================================================================================
 # Elasticsearch-alt with data and logs buiten outside the container
 resource "kubernetes_deployment" "elasticsearch2" {
   depends_on = [
