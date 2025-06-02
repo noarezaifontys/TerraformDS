@@ -1,0 +1,16 @@
+# Path to directory where to store the data (separate multiple locations by comma):
+#
+path.data: /var/lib/elasticsearch
+#
+# Path to log files:
+#
+path.logs: /var/log/elasticsearch
+ 
+cluster.name: elk-cluster
+node.name: master-node
+node.roles: ["master"]
+network.host: 0.0.0.0
+http.port: 9200
+xpack.security.enabled: false
+xpack.security.transport.ssl.enabled: false
+xpack.security.http.ssl.enabled: false
