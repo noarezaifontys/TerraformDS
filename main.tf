@@ -326,7 +326,7 @@ resource "azurerm_subnet_network_security_group_association" "aks_subnet_nsg_ass
 
 # providers
 provider "kubernetes" {
-  config_path = "C:\\Users\\rezai\\.kube\\config" #your kube config (usually: C:\\users\\name\\.kube\\config)
+  config_path = "C:\\Users\\luukr\\.kube\\config" #your kube config (usually: C:\\users\\name\\.kube\\config)
   host                   = data.azurerm_kubernetes_cluster.aks_data.kube_config[0].host
   client_certificate     = base64decode(data.azurerm_kubernetes_cluster.aks_data.kube_config[0].client_certificate)
   client_key             = base64decode(data.azurerm_kubernetes_cluster.aks_data.kube_config[0].client_key)
@@ -368,31 +368,31 @@ resource "null_resource" "wait_for_kibana_pod" {
 }
 
 # using the .sh files
-data "external" "enrollment_token" {
-  program = ["bash", "${path.module}/elastic-enrollment-token.sh"]
-  depends_on = [null_resource.wait_for_elasticsearch_pod]
-}
+# data "external" "enrollment_token" {
+#   program = ["bash", "${path.module}/elastic-enrollment-token.sh"]
+#   depends_on = [null_resource.wait_for_elasticsearch_pod]
+# }
 
-data "external" "elastic_password" {
-  program = ["bash", "${path.module}/elastic-password.sh"]
-  depends_on = [null_resource.wait_for_elasticsearch_pod]
-}
+# data "external" "elastic_password" {
+#   program = ["bash", "${path.module}/elastic-password.sh"]
+#   depends_on = [null_resource.wait_for_elasticsearch_pod]
+# }
 
-data "external" "verification_code" {
-  program = ["bash", "${path.module}/kibana-verification-code.sh"]
-  depends_on = [null_resource.wait_for_kibana_pod]
-}
+# data "external" "verification_code" {
+#   program = ["bash", "${path.module}/kibana-verification-code.sh"]
+#   depends_on = [null_resource.wait_for_kibana_pod]
+# }
 
-output "enrollment_token" {
-  value = data.external.enrollment_token.result
-}
-output "elastic_password" {
-  value = data.external.elastic_password.result
-}
+# output "enrollment_token" {
+#   value = data.external.enrollment_token.result
+# }
+# output "elastic_password" {
+#   value = data.external.elastic_password.result
+# }
 
-output "verification_code" {
-  value = data.external.verification_code.result
-}
+# output "verification_code" {
+#   value = data.external.verification_code.result
+# }
 
 # making the Persistent Volume Claim to initalize containers
 resource "kubernetes_persistent_volume_claim" "elk_pvc" {
@@ -477,8 +477,9 @@ resource "kubernetes_config_map" "logstash_config2" {
       }
 
       output {
+        stdout { codec => rubydebug }
         elasticsearch {
-          hosts => ["http://elasticsearch-alt:9200"]
+          hosts => ["http://elasticsearch:9200"]
           index => "logstash-%%{+YYYY.MM.dd}"
         }
       }
@@ -534,6 +535,21 @@ xpack.monitoring.enabled: false
     EOT
   }
 }
+
+resource "kubernetes_config_map" "logstash_pipelines" {
+  metadata {
+    name      = "logstash-pipelines"
+    namespace = "default"
+  }
+
+  data = {
+    "pipelines.yml" = <<EOT
+- pipeline.id: main
+  path.config: "/usr/share/logstash/pipeline/logstash.conf"
+    EOT
+  }
+}
+
 #================================================================================================================================
 resource "kubernetes_deployment" "elasticsearch" {
   metadata {
@@ -694,12 +710,25 @@ resource "kubernetes_deployment" "logstash" {
             mount_path = "/usr/share/logstash/config/logstash.yml"
             sub_path   = "logstash.yml"
           }
+
+          volume_mount {
+            name       = "logstash-pipeline"
+            mount_path = "/usr/share/logstash/pipeline/logstash.conf"
+            sub_path   = "logstash.conf"
+          }
+
         }	
 
         volume {
           name = "logstash-config"
           config_map {
             name = kubernetes_config_map.logstash_config.metadata[0].name
+          }
+        }
+        volume {
+         name = "logstash-pipeline"
+         config_map {
+           name = kubernetes_config_map.logstash_config2.metadata[0].name
           }
         }
       }
@@ -762,8 +791,16 @@ resource "kubernetes_service" "logstash" {
     }
 
     port {
+      name        = "api"
       port        = 9600
       target_port = 9600
+    }
+
+    port {
+      name        = "beats"
+      port        = 5044
+      target_port = 5044
+
     }
   }
 }
@@ -872,10 +909,6 @@ resource "kubernetes_deployment" "kibana2" {
             name       = "kibana-data"
             mount_path = "/usr/share/kibana/data"
           }
-          # volume_mount {
-          #   name       = "kibana-config"
-          #   mount_path = "/usr/share/kibana/config"
-          # }
 
         }
 
@@ -885,12 +918,6 @@ resource "kubernetes_deployment" "kibana2" {
             claim_name = kubernetes_persistent_volume_claim.elk_data_pvc.metadata[0].name
           }
         }
-        # volume {
-        #   name = "kibana-config"
-        #   config_map {
-        #     name = kubernetes_config_map.kibana_config.metadata[0].name
-        #   }
-        # }
       }
     }
   }
@@ -940,6 +967,11 @@ resource "kubernetes_deployment" "logstash2" {
             mount_path = "/usr/share/logstash/config/logstash.yml"
             sub_path   = "logstash.yml"
           }
+          volume_mount {
+            name       = "logstash-pipelines"
+            mount_path = "/usr/share/logstash/config/pipelines.yml"
+            sub_path   = "pipelines.yml"
+          }
         }
 
         volume {
@@ -966,6 +998,13 @@ resource "kubernetes_deployment" "logstash2" {
             name = kubernetes_config_map.logstash_config.metadata[0].name
           }
         }
+        volume {
+          name = "logstash-pipelines"
+          config_map {
+          name = kubernetes_config_map.logstash_pipelines.metadata[0].name
+          }
+        }
+
       }
     }
   }
@@ -1029,4 +1068,80 @@ resource "kubernetes_service" "logstash_alt" {
       target_port = 5044
     }
   }
+}
+
+# public IP keycloak
+
+resource "azurerm_public_ip" "Keycloak_public_ip" {
+  name                = "keycloak-public-ip"
+  location = data.azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+  allocation_method   = "Static"
+  sku                 = "Standard"
+}
+
+# Keycloak NIC
+resource "azurerm_network_interface" "NIC-keycloak" {
+  name                = "keycloak-nic"
+  location = data.azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.agent_subnet.id
+    private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = azurerm_public_ip.Keycloak_public_ip.id
+  }
+}
+
+
+# Keycloak
+resource "azurerm_linux_virtual_machine" "keycloak" {
+  name                = "keycloak"
+  location = data.azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+  size                = "Standard_D2s_v3"
+  admin_username      = var.admin_username_keycloak
+  admin_password      = var.admin_password_keycloak
+  network_interface_ids = [
+    azurerm_network_interface.NIC-keycloak.id
+  ]
+
+  disable_password_authentication = false
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts-gen2"
+    version   = "latest"
+  }
+
+  custom_data = base64encode(<<-EOT
+    #!/bin/bash
+
+    apt update
+
+    apt install -y openjdk-21-jdk
+
+    curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.13.2-amd64.deb 
+
+    dpkg -i filebeat-8.13.2-amd64.deb
+
+    wget https://github.com/keycloak/keycloak/releases/download/26.2.5/keycloak-26.2.5.zip
+
+    apt install -y unzip
+
+    unzip keycloak-26.2.5
+
+    cd keycloak-26.2.5
+    
+    bin/kc.sh start-dev --bootstrap-admin-username=AdminKeycloak --bootstrap-admin-password=*******  --log-level=WARN  --log="console,file,syslog"
+
+  EOT
+  )
 }
