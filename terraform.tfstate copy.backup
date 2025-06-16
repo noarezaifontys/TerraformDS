@@ -1,0 +1,2919 @@
+{
+  "version": 4,
+  "terraform_version": "1.11.3",
+  "serial": 162,
+  "lineage": "519a7e19-2c12-6edc-4f19-11ce02d0d415",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "data",
+      "type": "azurerm_kubernetes_cluster",
+      "name": "aks_data",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "aci_connector_linux": null,
+            "agent_pool_profile": [
+              {
+                "auto_scaling_enabled": true,
+                "count": 1,
+                "max_count": 15,
+                "max_pods": 30,
+                "min_count": 1,
+                "name": "default",
+                "node_labels": {},
+                "node_public_ip_enabled": false,
+                "node_public_ip_prefix_id": "",
+                "node_taints": [],
+                "orchestrator_version": "1.31",
+                "os_disk_size_gb": 50,
+                "os_type": "Linux",
+                "tags": {},
+                "type": "VirtualMachineScaleSets",
+                "upgrade_settings": [
+                  {
+                    "drain_timeout_in_minutes": 0,
+                    "max_surge": "10%",
+                    "node_soak_duration_in_minutes": 0
+                  }
+                ],
+                "vm_size": "Standard_DS3_v2",
+                "vnet_subnet_id": "",
+                "zones": []
+              }
+            ],
+            "api_server_authorized_ip_ranges": [],
+            "azure_active_directory_role_based_access_control": [],
+            "azure_policy_enabled": null,
+            "current_kubernetes_version": "1.31.8",
+            "disk_encryption_set_id": "",
+            "dns_prefix": "myaksdns",
+            "fqdn": "myaksdns-fz7rhomv.hcp.westeurope.azmk8s.io",
+            "http_application_routing_enabled": null,
+            "http_application_routing_zone_name": null,
+            "id": "/subscriptions/642dd095-927a-4bdf-9152-d4f6609d0207/resourceGroups/Dataplatform-Group-Monitoring/providers/Microsoft.ContainerService/managedClusters/my-aks-cluster",
+            "identity": [
+              {
+                "identity_ids": [],
+                "principal_id": "2de9f62d-b1f2-4d4c-a59e-c980bb56633b",
+                "tenant_id": "a9f4aef9-8df7-4cc3-99a8-e85824715025",
+                "type": "SystemAssigned"
+              }
+            ],
+            "ingress_application_gateway": null,
+            "key_management_service": [],
+            "key_vault_secrets_provider": null,
+            "kube_admin_config": [],
+            "kube_admin_config_raw": "",
+            "kube_config": [
+              {
+                "client_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZIakNDQXdhZ0F3SUJBZ0lSQUpxNEhZdXVrQSsxNjdVVFVIVEEyVjB3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpVd05qQTFNVFF4TkRJNFdoY05NamN3TmpBMU1UUXlOREk0V2pBdwpNUmN3RlFZRFZRUUtFdzV6ZVhOMFpXMDZiV0Z6ZEdWeWN6RVZNQk1HQTFVRUF4TU1iV0Z6ZEdWeVkyeHBaVzUwCk1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBdmNoVVFUcExibnBjUHoxY21PL00KcDdycml4RlYzdXdNNS9CK01lTlR1VTM3RE05MWxiVEdqZzZvTW8yVlF0dnFwWXdIR0VtbHJXM2NFWnVVZ2VRYwp6SUdveHI3UHVvSWVzR0hFNjlLam9hMUpNc0VOUUk0QkJ4ZE5Yek1naHhXd2QvSG9CTTRITkFIUnIrSG42WHNlCmRsNUUzbzRlOU11Zk02SWY0R1lFd1V6ZTJHMi9EY2dnOVRobTlYcXJhZ3c2czNzbml1ZzlSMXBnb01NdEs3Y3YKcDVzaWgzZWpxa0FldHc0b0hPR2s2a1BETGVSbWRqZUJmT0VGUlY2V3AxQUZRV3R5WStOYmNCZnJySFFpVGpJWApXbDBHQ0hPSWdFaDBNNm9md0pQVHp3NmlwQVRlYzFGNHk3SVh0K01DMjg1eHk5c084S3hqRjdnMUtXekxobmRKCklucGt4dzJTUjdvTXA3U1RLSDFPbjRQdlNBMm5TVk10UFdyRnBjbC9WZVA1UUdDbmJzTFl6bXJDRCtoN1htNEEKTnpjS3hRd1ViaTdESXRvY2dkK211NzkrdHJ3V2lwSERmbUQxTmNPS3pZT21NWXJsZUQzdlpWN3BpOU95TmJZaAprS29kL0RzWUlmNU1vZlFMTTkvbDFuZ05yOTExNjNGWWZVNHNNWTJjek1DMitvdGt2Wmt4NEZGdzE1S1JXaG1hCitNK3VKbzVaaWRJSzhLeGREUThYaDl5V3ZGNTcvS0o1UnZXKzh4QkVLOEFGODMzT1dMRkFLOGMzak9BZEc0d2kKWTh2T3NPQ0M0OFNHNitFZ2lNVWFuSnFUbElmb2ZZY053MEhLTCtYTXFwYklsY1p5dWtGaUF5T3B2RUJhM1ZyMgplVFNRS2ZzeU9kZEVJVkRwRTJZdjBZOENBd0VBQWFOV01GUXdEZ1lEVlIwUEFRSC9CQVFEQWdXZ01CTUdBMVVkCkpRUU1NQW9HQ0NzR0FRVUZCd01DTUF3R0ExVWRFd0VCL3dRQ01BQXdId1lEVlIwakJCZ3dGb0FVRVp4VXlLK0EKTnpEVEZvcnNOVGRrUU5kbkJQa3dEUVlKS29aSWh2Y05BUUVMQlFBRGdnSUJBTWpzUnhVTEVvaFNUang3SGlXLwplZ3NtTjMzelZnQ1pmRTliQXhRc2lsL1IyY1hCWlZmZ1NRT0xDaG5ldzh0dU5aODlNY3VBUWlITVdvRklTMndoCnBDSS9Bd3liOFdtODNQNC9RL1NKc0hLYm5ONzFmM1NGWVB2QVhKcGRTWEZ4TkFIVjNONFZ4L1BXbWxxcmZIa2YKNytwVC9BZE5SSEdwVVdpdjlrMVBjMm40WW00cnFPU21URUVCQlFvNEVMU1hQZy9nRGJPNnBOUVRQMGhqUHU5bQpjMDlKaUlvQ1BReXdXM0ZxMExlWjV5K0FsaFJWaDF2ZEFlQWRBUlRKYUFWYnFrZGJIUTRDN3BOQmpheGQ5S3k1CkZTVXNuSnFDNVBEOHZnUVNmN0VGSGYzU3FOaVh1YURJN3NtUmdtZCtlRis0SWNQOGNIcjJkaUpRTFBCWHRvOSsKNWMzSVZEV0s0V2paRzIyc2V0em9lUWh2ZHUrUEVCZ1ZUYlp0TzB1NU5UaFYxMElMMTByc0lma3YzejFCV1RZagpkMnlmblBXbThETlJFQ0JENEtEV0lKVTdkWUtLZ2w0d1J4SmZmSXpCRHRWcExaSFEzM2E3dThqVGJVL1ZramhFCjVNZVJjSWtKTko3bFd2UjJoUTY3NkgxcjJVblNPd1hLYkFxdVN3dE5heDdVVFBQRHN2Q3lkUWo2bXljZkdPcEcKUS9MWHVuZFMxbGlNNDdEcXI3ZEUxLzZIaWVKVGhtTVRITEFyOEl5anRXZ0E0VW91YkpHOTgvelZpcXl6WXZpSgpZcUE4VTU2RzBuWmdtTnlDRnY2WUk0QXd0OUZvWUxRckNYS0F4Q1BXQ2dCR01Sd1JTeVh0TDdlWTlFYVNPTjVxCnJxODA2R3ZpRGRTNk5HSmhOVVF5TUhFcwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                "client_key": "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKS1FJQkFBS0NBZ0VBdmNoVVFUcExibnBjUHoxY21PL01wN3JyaXhGVjN1d001L0IrTWVOVHVVMzdETTkxCmxiVEdqZzZvTW8yVlF0dnFwWXdIR0VtbHJXM2NFWnVVZ2VRY3pJR294cjdQdW9JZXNHSEU2OUtqb2ExSk1zRU4KUUk0QkJ4ZE5Yek1naHhXd2QvSG9CTTRITkFIUnIrSG42WHNlZGw1RTNvNGU5TXVmTTZJZjRHWUV3VXplMkcyLwpEY2dnOVRobTlYcXJhZ3c2czNzbml1ZzlSMXBnb01NdEs3Y3ZwNXNpaDNlanFrQWV0dzRvSE9HazZrUERMZVJtCmRqZUJmT0VGUlY2V3AxQUZRV3R5WStOYmNCZnJySFFpVGpJWFdsMEdDSE9JZ0VoME02b2Z3SlBUenc2aXBBVGUKYzFGNHk3SVh0K01DMjg1eHk5c084S3hqRjdnMUtXekxobmRKSW5wa3h3MlNSN29NcDdTVEtIMU9uNFB2U0EybgpTVk10UFdyRnBjbC9WZVA1UUdDbmJzTFl6bXJDRCtoN1htNEFOemNLeFF3VWJpN0RJdG9jZ2QrbXU3OSt0cndXCmlwSERmbUQxTmNPS3pZT21NWXJsZUQzdlpWN3BpOU95TmJZaGtLb2QvRHNZSWY1TW9mUUxNOS9sMW5nTnI5MTEKNjNGWWZVNHNNWTJjek1DMitvdGt2Wmt4NEZGdzE1S1JXaG1hK00rdUpvNVppZElLOEt4ZERROFhoOXlXdkY1NwovS0o1UnZXKzh4QkVLOEFGODMzT1dMRkFLOGMzak9BZEc0d2lZOHZPc09DQzQ4U0c2K0VnaU1VYW5KcVRsSWZvCmZZY053MEhLTCtYTXFwYklsY1p5dWtGaUF5T3B2RUJhM1ZyMmVUU1FLZnN5T2RkRUlWRHBFMll2MFk4Q0F3RUEKQVFLQ0FnRUFzdVd1bHJZdStQdWJEWG40V2FwaXp4SGlpM3RSNlF1MnRzVDdFR2ZzT2xlSitlOXVOaXJzcUdpawpvTkxhQ3VabmNKcG83Ym91MVNja05lemt0dlNqT1J4WVR0RDczQ0pnYjRBYU12cWlpUHRpYnRlUWVIUGtBQjAxCk1ESnZ6U2JpN0k0NldwMGtLU0ExMjRnbUp1K0tMYVo3WVJlemtxcUhiaEs3M2JvTmJYSGE5MFdzdlg4VG9sVUMKcVJCem1Vbmg0K0tKeWVWV0xuYkJjNG5JZ05ienN4a0lHWTdyMXNjT3JSeEpMOEI4eHVBTmtxc2s4dmNydHQ0ZgpLOThZUUt1cjZKa3lnWHFHYlVuL1BOZFVwMFdNd2YvQ2VpRCtZWDdyR3ZDWmNkMW40bDAzYjBtdnNDRHlyNEUzCjNuMjk2aG5YSjRWZHRmMnFnMmQvcFljSzY3eHlVTThnUlJzRC9hRzdBWmhlTmJsUXhXRGpadTYwcWRrTlRkK1YKc0JIWEMyS1FoQTN1ZzdwWDFoM1ZMbWUySElLZFJNL3FTbWpYSTIrRFZ3UmxzMjFabVp2K25FRUxRb29YWFVFMAozeEg2UnBXdWFTem1kcVVuVnRTbU5oT0V3ZElqVzRyRjVUa3krQkJNY3JyYTBwUi9qakZhNkg4aDJ0bHp2VU5sCm1oRlcvcUdlT250QytNSTZSbzN6UFNmL2hGNFRiSVkwMnozSjUycDlTSVh1dUhvVXVrZkk0SE12QndiNCtrMHgKMjBXeHZKVHBPaENBS0NoUVNqMG5oMk5GTGlpM1VNbldGQk12OTJSRGdyZ1ZNdkVPaFBqNUFLWnBlaXhwWkRZaApib04vRjZFWFZQcnBrR0FRRVRhNEFaRk1wbm51ZlpEeDk2ZUhrU2I1a2V4UThqN1pvaUVDZ2dFQkFPNU90a1ZFCjFVSWNFOWJ0SE9ScUlkd3NEQkVZTzBiZy9qUnNsQ0hIejVYc0JrZTkwMlhZWEdUNkFmaWRIM2dpUDdNWDFPWUwKVjFnMnVmeEtDYys0Sm5KT3J6YUZsbUN2UElQU1dZL2hHRnpDNFNDN2tmYVZWaG56d2R0TmVSWWo4OHFhbnlMcwo0aitrVDZSQXBEV1lYa2I4Kzg1c01Sb210UkRnU21hVFN6RzkwQkg0cEpxU3k0SEJEV2ZhY0Y2dE4wQXZpLy9aCjF6TmdZcTBRc3U1ZXZyN1U1dGhGU1V6aUJGZTE3SVpzdGxMaXBRQzF6TWdBM01ZamlpclU0TkViSmQ4ZWNwTS8KZHB5c3lIeXQyalZJSlBPK1o3UWRrZjFzQXVRdTUvOE5oeThHMnFMbHFjUEFjQVdTckVrTXQxZlREbXNUSE93Ugo5cUdTS2xSTmtuZGsvWmtDZ2dFQkFNdmZXVlAyaGN2ekxzaG9ieEdUbVlEb0RyZnVBVlg0bUUxRDdhblhuQlFTCk1GRGdsVHd2SU5xVWxBdWxnZFRJaDJLOFJWTkZtTXVoVzkwMjAzSmd0YTd5NmlCbVdTd1hIb2ZqVVNGSWpuQ24KS3B2Z0FnY1VsNFVXR1k3K3J5L1Q2eUk1TnBmaitCM3FKN0x5bCtPMkV4RzFTa3BhRmYxREFtb25pZDY5SUZ0NgpYeElHMUdSYmYvUkpSQXFPSndMczJhbXRsdGRQWm11eG1GWFhpdjlQRnk5RHJWaFZ2THVPRGppMWJOZ2JXK2ZhCjgxbDVhVEVid3B5NUR3VTVMRWIxN2t5cVNPdmorMzBGZnVIbVc2QVZ2U1dBck1TQVVkZUoxSmIzclo4STBlY2sKeE9yYU00eW5yVzJJQThrekhXUCtQNnNWSzRURDgydml2aUloZHQ5UHNXY0NnZ0VBYVA0UTNBL3BqVWpsak1uRwo4dk8zbTFOa3RadGhjbWJxV0pxRjRTUXhWekkzeWgvZUpYN2ZwalZuN09yODFHYnlmYXRBUjJJengwL0ZQVnc1CldtVWR1enJqZ3pmeit3RDV2bkpNdDFGSzlJTi93SFlqWnVxQWxzcUlYR0NUdXFkNFg0a2tGN1VhTVVQcE9zcW8KRGx6bEhJMlZPMnI3YnpRaWpoN2phTEg0YlIvZHJpMUlDRG9vb3pBMUFjNkJ0NVRGUk9ndDNEbFQwUFRrUksrWQp4ZURFVlR0andXRTFYRVF2K1p6VGFwNDI3ZW1oSE9EOEtob0hLdHk1b1FsTlM1T1VhZXIyTzkyNEdtc2RvYURQCkJLNldhVFU0WjJpbnkybHRGSzk5MHlkWXFlVnhLbGZaSmIrQkcxTjF5SEZyemF2VkxHT3RXR3pKcG9ISldIOGMKeXJHWjhRS0NBUUJaWWZIckV2RTBLc2svQ2pKdjlWTmVwZDhXR3Q0eEVBM09DbE1mbkswTVM3RXRORm1aaWx3UQpHUVlUV1J2ajY0c1g2YzFISmdOSWU5VW4xb3E3NGRTbUFGQlBwaS9BV2Q2RDIxRE5rOThIV3ZNZVpnYmRqZFNrCmY3enk2WXhySHJFL1R2QTFoYmhaZlRpc2h4bTZ0ekFER29XWXRZaGdna21EdXhRQ09NNy83RlhVTkhSWUQ1bTQKdzRwMlNqNm1WS3RWYmdydEdSMmhaN3FQSURJTG4yUmR6NEVuY21lTm4wbHk2Vy93QzRhdXoxclR4cHdzOEt2UgpSSDFtWDl1ZXZPSWVjS1lKN2VscnRjWWNTbit2WHZpUGdhdTlkempxazc1RjlnOEQ0NzBMWng2Q2pPbis1K0RzClhhNnpQcHJMSlVSS3dMeFV1QWg0SzNBS3pMc3VTdVZQQW9JQkFRQ2xCRzRrVGIrSi8vdkpnaVo2VmZvSHF4STgKbm5uQTRwWGwxODliQzhMMFlGc0tUSjZBWHd4T2FUdlZvcVdhL2dxeTVYRnpzb2NMRjBPNzZlUGw5RldVNCtJSwp1Y1hNc0ZEcnJ6bFppTG11dVpnVzBHVmdHdWJ2L3VTcTlpVE9rR2ZsSUxiWHIxYmU0UFV4a01RMG02eVhOZUgyCjZqNlc1SG9YUG8yWUhsNkt6QVNaUzhtTFRKdE03NkxEVVY4c3VPK011TEUxUW5hNnE4K0FPTEkra1RoTWFNK0cKakdWL0ErV0VNWFdsS0daRnNIK1MzcVBuczVwQnA1bnNhTlF1UDlsaERueWd5VU1RbUgyS3l4cUhhSzBMVHdoSwpsR05vd25zeTNtdUlEMEEzYStkZjVvdFRlL0FkWG95TDdsc0xhVGlWQkl3NzNFNG00YlNLVkVQbC9UWEMKLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0K",
+                "cluster_ca_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUU2VENDQXRHZ0F3SUJBZ0lSQU9zNTh2WTZ4UUNUa0htdjlobnBPNTh3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdJQmNOTWpVd05qQTFNVFF4TkRJNFdoZ1BNakExTlRBMk1EVXhOREkwTWpoYQpNQTB4Q3pBSkJnTlZCQU1UQW1OaE1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBCjA0dllyZ0k2U1AxSFlMOW5BdDR0b0ZldUtiT3loSk5CTW51QjJBUHY0K3gzalMxcjUxWXBXZXlxOXFYOFFIVE4KUk40bUp0NmxDZlUvYjd5MFcxTHVjYVVmRlJoOWNJQzBZaGtnMjhnWjBsZzVpL2FEUGt2ZHZTcnpDVnNCMEdhKwpWaWoxWWl5Um91UVlCUUk2czhDY1R2dGthWE9ndjRmSGV5ajZGYm9FU05lVDUzUm02alRYZlJwaFNLKzhvanFNCkRjT2RPVklYUnhDbi9LNzg1aVBXYStFeHB0anlyQm92WExXS3lqTlhKVlF1YVdmdXpaeFVJTUJNL04xY0RiaXIKMm1FRkk2Rk9YZ2lUaWhOdmZIc1NtUWRxdENldWt1SXlBQ2NSRU9TUWVFb0t2UE5JOHJLTmszRGYzUDJPTk9ESwpuVDJKQ0tpTDNqVDBSVnRUMHRMWElnYjRTRm9HTzBiMUNaUzJsVU9hYVh3cFl0RlZoWDJMV2NSU1NxK2p1WVdwClNQVzQ5WnlWS2RySUJPT2tlS1VTNUxCeUIvajhJQTEvSjkxN082VWdzZjkySU55b3R2ZVR0QmdrZWYxL2NCTzMKYWl2eVl3RGNVL3NrOWw5cnFiTXVWZDVsb3JEK0ZTSGVmaEdqTEVKOXBhbEVqUVRraUFhbERhV1owM3JSL0Jpbgo2eWZIUm9GN25uTEIrTllUQnAvZ2xPVkQ2bEZBYkJ5RVptVURSeWtRTFZmSU42NVBSdDBtdkVhSUhORHhMVVFmCmgraEdZNTQ4eE1ZY3A1ZGlDRFp4V21sOFFaN1ZLMThpMEtydGViRHczMzZUT2V2K2NuUmVTSWF6clFaTXdhR0gKaXF4TTdxRWFFbjRVT01TTnlaT1F5WXcyUXVjaTNmWHJ2VUhCMmtiUmlsY0NBd0VBQWFOQ01FQXdEZ1lEVlIwUApBUUgvQkFRREFnS2tNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGQkdjVk1pdmdEY3cweGFLCjdEVTNaRURYWndUNU1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQ0FRQjBaQmVXVUk4bk1SOTdqWk0yRWI5bnpUbXEKZllpM052K0Z1YUMvU0xIYktHOW9YOXdwSzc1dWVwUDJCN1lsSUlsSW43bzgzUXpKRU1vTGRlbm1lRitaVStpWQpWUlR5SDFqMWU0QTNGTFFNQlVOaDVRazNSbUNhMStZaEh2Q1VoWGJIRmNzZU1EL1NVK0tSWVIvdnRpdWxHdVIwCldSU3R6RmE3Zk40dnVYM1NiOE9TNkJrejZjOFJaTFpKUVdxQlJwdSt1SWlKUWlUeFlBdEpnbGFqNlllT2gxUmwKS29GaUxlT1JuNjQ5a2pCMVJQZmJsRjRQWFlPWnpGYW1rTXBBeWNDeFJTeUZHMHVCNE1sWkE3MmMzT3VRN2RacgovTEh2cXBaM1ZqeTY4cCtaSGdaUEdaSllvNkNOVk1MbkZGM2N6Wi9sUmM2WEljMGN6dFgreDA3TXhLeTZydC85Cm5vN01jMStoeUtXWGJmQis4L3hHazVJMGVEQXYxN2VnUHVuZ3cwNHpGVVBsVTd3T0htK0FGRGFnek53MFdlSTUKRkYvRDVhTDFYMElyeG1Nbmg5Q01XbDZHbjZuUC9HRHVJbW13Z1ZyTDkwZ3hSN1c1WFNuQ21nbXBXVmFEVmF1eApkOTdZajNWL0Vkekt6aFBtb2FRS1pxRHBEOERxUlo1TnhsZ2IxRHEvb3VLcnJJNkNFSENwTUltZVNZRFlZakhPClgvcWdyMFVqbHdUM3lUR3RYMXd1ZDFKNS9nbE50dmdhUXZGU2FaNjR3endRNWtwcnZiY2s0RnBnNVF5b0JWWUoKN1E0YW12TlBmWjI2ckhwUEhVaDI0NnBpclB2NUp6SVQrc05kQlZ5Nm94MjB5T3cxbnRCRTh4SWtCZFhOT3hvNQpPbkRiWWtPeFBwWFVjUmlPNlE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                "host": "https://myaksdns-fz7rhomv.hcp.westeurope.azmk8s.io:443",
+                "password": "uzivy3chl9wgejofr46ljo7rtmev8fkux21ijeyv5zvizfdgyhcs6qcjc8ephwv7klzhfyispewuos8kgepihfm4gkrjgelklnvlkbuqunhiv2yurnpmjqowgku5dlmi",
+                "username": "clusterUser_Dataplatform-Group-Monitoring_my-aks-cluster"
+              }
+            ],
+            "kube_config_raw": "apiVersion: v1\nclusters:\n- cluster:\n    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUU2VENDQXRHZ0F3SUJBZ0lSQU9zNTh2WTZ4UUNUa0htdjlobnBPNTh3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdJQmNOTWpVd05qQTFNVFF4TkRJNFdoZ1BNakExTlRBMk1EVXhOREkwTWpoYQpNQTB4Q3pBSkJnTlZCQU1UQW1OaE1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBCjA0dllyZ0k2U1AxSFlMOW5BdDR0b0ZldUtiT3loSk5CTW51QjJBUHY0K3gzalMxcjUxWXBXZXlxOXFYOFFIVE4KUk40bUp0NmxDZlUvYjd5MFcxTHVjYVVmRlJoOWNJQzBZaGtnMjhnWjBsZzVpL2FEUGt2ZHZTcnpDVnNCMEdhKwpWaWoxWWl5Um91UVlCUUk2czhDY1R2dGthWE9ndjRmSGV5ajZGYm9FU05lVDUzUm02alRYZlJwaFNLKzhvanFNCkRjT2RPVklYUnhDbi9LNzg1aVBXYStFeHB0anlyQm92WExXS3lqTlhKVlF1YVdmdXpaeFVJTUJNL04xY0RiaXIKMm1FRkk2Rk9YZ2lUaWhOdmZIc1NtUWRxdENldWt1SXlBQ2NSRU9TUWVFb0t2UE5JOHJLTmszRGYzUDJPTk9ESwpuVDJKQ0tpTDNqVDBSVnRUMHRMWElnYjRTRm9HTzBiMUNaUzJsVU9hYVh3cFl0RlZoWDJMV2NSU1NxK2p1WVdwClNQVzQ5WnlWS2RySUJPT2tlS1VTNUxCeUIvajhJQTEvSjkxN082VWdzZjkySU55b3R2ZVR0QmdrZWYxL2NCTzMKYWl2eVl3RGNVL3NrOWw5cnFiTXVWZDVsb3JEK0ZTSGVmaEdqTEVKOXBhbEVqUVRraUFhbERhV1owM3JSL0Jpbgo2eWZIUm9GN25uTEIrTllUQnAvZ2xPVkQ2bEZBYkJ5RVptVURSeWtRTFZmSU42NVBSdDBtdkVhSUhORHhMVVFmCmgraEdZNTQ4eE1ZY3A1ZGlDRFp4V21sOFFaN1ZLMThpMEtydGViRHczMzZUT2V2K2NuUmVTSWF6clFaTXdhR0gKaXF4TTdxRWFFbjRVT01TTnlaT1F5WXcyUXVjaTNmWHJ2VUhCMmtiUmlsY0NBd0VBQWFOQ01FQXdEZ1lEVlIwUApBUUgvQkFRREFnS2tNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGQkdjVk1pdmdEY3cweGFLCjdEVTNaRURYWndUNU1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQ0FRQjBaQmVXVUk4bk1SOTdqWk0yRWI5bnpUbXEKZllpM052K0Z1YUMvU0xIYktHOW9YOXdwSzc1dWVwUDJCN1lsSUlsSW43bzgzUXpKRU1vTGRlbm1lRitaVStpWQpWUlR5SDFqMWU0QTNGTFFNQlVOaDVRazNSbUNhMStZaEh2Q1VoWGJIRmNzZU1EL1NVK0tSWVIvdnRpdWxHdVIwCldSU3R6RmE3Zk40dnVYM1NiOE9TNkJrejZjOFJaTFpKUVdxQlJwdSt1SWlKUWlUeFlBdEpnbGFqNlllT2gxUmwKS29GaUxlT1JuNjQ5a2pCMVJQZmJsRjRQWFlPWnpGYW1rTXBBeWNDeFJTeUZHMHVCNE1sWkE3MmMzT3VRN2RacgovTEh2cXBaM1ZqeTY4cCtaSGdaUEdaSllvNkNOVk1MbkZGM2N6Wi9sUmM2WEljMGN6dFgreDA3TXhLeTZydC85Cm5vN01jMStoeUtXWGJmQis4L3hHazVJMGVEQXYxN2VnUHVuZ3cwNHpGVVBsVTd3T0htK0FGRGFnek53MFdlSTUKRkYvRDVhTDFYMElyeG1Nbmg5Q01XbDZHbjZuUC9HRHVJbW13Z1ZyTDkwZ3hSN1c1WFNuQ21nbXBXVmFEVmF1eApkOTdZajNWL0Vkekt6aFBtb2FRS1pxRHBEOERxUlo1TnhsZ2IxRHEvb3VLcnJJNkNFSENwTUltZVNZRFlZakhPClgvcWdyMFVqbHdUM3lUR3RYMXd1ZDFKNS9nbE50dmdhUXZGU2FaNjR3endRNWtwcnZiY2s0RnBnNVF5b0JWWUoKN1E0YW12TlBmWjI2ckhwUEhVaDI0NnBpclB2NUp6SVQrc05kQlZ5Nm94MjB5T3cxbnRCRTh4SWtCZFhOT3hvNQpPbkRiWWtPeFBwWFVjUmlPNlE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\n    server: https://myaksdns-fz7rhomv.hcp.westeurope.azmk8s.io:443\n  name: my-aks-cluster\ncontexts:\n- context:\n    cluster: my-aks-cluster\n    user: clusterUser_Dataplatform-Group-Monitoring_my-aks-cluster\n  name: my-aks-cluster\ncurrent-context: my-aks-cluster\nkind: Config\npreferences: {}\nusers:\n- name: clusterUser_Dataplatform-Group-Monitoring_my-aks-cluster\n  user:\n    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZIakNDQXdhZ0F3SUJBZ0lSQUpxNEhZdXVrQSsxNjdVVFVIVEEyVjB3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpVd05qQTFNVFF4TkRJNFdoY05NamN3TmpBMU1UUXlOREk0V2pBdwpNUmN3RlFZRFZRUUtFdzV6ZVhOMFpXMDZiV0Z6ZEdWeWN6RVZNQk1HQTFVRUF4TU1iV0Z6ZEdWeVkyeHBaVzUwCk1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBdmNoVVFUcExibnBjUHoxY21PL00KcDdycml4RlYzdXdNNS9CK01lTlR1VTM3RE05MWxiVEdqZzZvTW8yVlF0dnFwWXdIR0VtbHJXM2NFWnVVZ2VRYwp6SUdveHI3UHVvSWVzR0hFNjlLam9hMUpNc0VOUUk0QkJ4ZE5Yek1naHhXd2QvSG9CTTRITkFIUnIrSG42WHNlCmRsNUUzbzRlOU11Zk02SWY0R1lFd1V6ZTJHMi9EY2dnOVRobTlYcXJhZ3c2czNzbml1ZzlSMXBnb01NdEs3Y3YKcDVzaWgzZWpxa0FldHc0b0hPR2s2a1BETGVSbWRqZUJmT0VGUlY2V3AxQUZRV3R5WStOYmNCZnJySFFpVGpJWApXbDBHQ0hPSWdFaDBNNm9md0pQVHp3NmlwQVRlYzFGNHk3SVh0K01DMjg1eHk5c084S3hqRjdnMUtXekxobmRKCklucGt4dzJTUjdvTXA3U1RLSDFPbjRQdlNBMm5TVk10UFdyRnBjbC9WZVA1UUdDbmJzTFl6bXJDRCtoN1htNEEKTnpjS3hRd1ViaTdESXRvY2dkK211NzkrdHJ3V2lwSERmbUQxTmNPS3pZT21NWXJsZUQzdlpWN3BpOU95TmJZaAprS29kL0RzWUlmNU1vZlFMTTkvbDFuZ05yOTExNjNGWWZVNHNNWTJjek1DMitvdGt2Wmt4NEZGdzE1S1JXaG1hCitNK3VKbzVaaWRJSzhLeGREUThYaDl5V3ZGNTcvS0o1UnZXKzh4QkVLOEFGODMzT1dMRkFLOGMzak9BZEc0d2kKWTh2T3NPQ0M0OFNHNitFZ2lNVWFuSnFUbElmb2ZZY053MEhLTCtYTXFwYklsY1p5dWtGaUF5T3B2RUJhM1ZyMgplVFNRS2ZzeU9kZEVJVkRwRTJZdjBZOENBd0VBQWFOV01GUXdEZ1lEVlIwUEFRSC9CQVFEQWdXZ01CTUdBMVVkCkpRUU1NQW9HQ0NzR0FRVUZCd01DTUF3R0ExVWRFd0VCL3dRQ01BQXdId1lEVlIwakJCZ3dGb0FVRVp4VXlLK0EKTnpEVEZvcnNOVGRrUU5kbkJQa3dEUVlKS29aSWh2Y05BUUVMQlFBRGdnSUJBTWpzUnhVTEVvaFNUang3SGlXLwplZ3NtTjMzelZnQ1pmRTliQXhRc2lsL1IyY1hCWlZmZ1NRT0xDaG5ldzh0dU5aODlNY3VBUWlITVdvRklTMndoCnBDSS9Bd3liOFdtODNQNC9RL1NKc0hLYm5ONzFmM1NGWVB2QVhKcGRTWEZ4TkFIVjNONFZ4L1BXbWxxcmZIa2YKNytwVC9BZE5SSEdwVVdpdjlrMVBjMm40WW00cnFPU21URUVCQlFvNEVMU1hQZy9nRGJPNnBOUVRQMGhqUHU5bQpjMDlKaUlvQ1BReXdXM0ZxMExlWjV5K0FsaFJWaDF2ZEFlQWRBUlRKYUFWYnFrZGJIUTRDN3BOQmpheGQ5S3k1CkZTVXNuSnFDNVBEOHZnUVNmN0VGSGYzU3FOaVh1YURJN3NtUmdtZCtlRis0SWNQOGNIcjJkaUpRTFBCWHRvOSsKNWMzSVZEV0s0V2paRzIyc2V0em9lUWh2ZHUrUEVCZ1ZUYlp0TzB1NU5UaFYxMElMMTByc0lma3YzejFCV1RZagpkMnlmblBXbThETlJFQ0JENEtEV0lKVTdkWUtLZ2w0d1J4SmZmSXpCRHRWcExaSFEzM2E3dThqVGJVL1ZramhFCjVNZVJjSWtKTko3bFd2UjJoUTY3NkgxcjJVblNPd1hLYkFxdVN3dE5heDdVVFBQRHN2Q3lkUWo2bXljZkdPcEcKUS9MWHVuZFMxbGlNNDdEcXI3ZEUxLzZIaWVKVGhtTVRITEFyOEl5anRXZ0E0VW91YkpHOTgvelZpcXl6WXZpSgpZcUE4VTU2RzBuWmdtTnlDRnY2WUk0QXd0OUZvWUxRckNYS0F4Q1BXQ2dCR01Sd1JTeVh0TDdlWTlFYVNPTjVxCnJxODA2R3ZpRGRTNk5HSmhOVVF5TUhFcwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\n    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKS1FJQkFBS0NBZ0VBdmNoVVFUcExibnBjUHoxY21PL01wN3JyaXhGVjN1d001L0IrTWVOVHVVMzdETTkxCmxiVEdqZzZvTW8yVlF0dnFwWXdIR0VtbHJXM2NFWnVVZ2VRY3pJR294cjdQdW9JZXNHSEU2OUtqb2ExSk1zRU4KUUk0QkJ4ZE5Yek1naHhXd2QvSG9CTTRITkFIUnIrSG42WHNlZGw1RTNvNGU5TXVmTTZJZjRHWUV3VXplMkcyLwpEY2dnOVRobTlYcXJhZ3c2czNzbml1ZzlSMXBnb01NdEs3Y3ZwNXNpaDNlanFrQWV0dzRvSE9HazZrUERMZVJtCmRqZUJmT0VGUlY2V3AxQUZRV3R5WStOYmNCZnJySFFpVGpJWFdsMEdDSE9JZ0VoME02b2Z3SlBUenc2aXBBVGUKYzFGNHk3SVh0K01DMjg1eHk5c084S3hqRjdnMUtXekxobmRKSW5wa3h3MlNSN29NcDdTVEtIMU9uNFB2U0EybgpTVk10UFdyRnBjbC9WZVA1UUdDbmJzTFl6bXJDRCtoN1htNEFOemNLeFF3VWJpN0RJdG9jZ2QrbXU3OSt0cndXCmlwSERmbUQxTmNPS3pZT21NWXJsZUQzdlpWN3BpOU95TmJZaGtLb2QvRHNZSWY1TW9mUUxNOS9sMW5nTnI5MTEKNjNGWWZVNHNNWTJjek1DMitvdGt2Wmt4NEZGdzE1S1JXaG1hK00rdUpvNVppZElLOEt4ZERROFhoOXlXdkY1NwovS0o1UnZXKzh4QkVLOEFGODMzT1dMRkFLOGMzak9BZEc0d2lZOHZPc09DQzQ4U0c2K0VnaU1VYW5KcVRsSWZvCmZZY053MEhLTCtYTXFwYklsY1p5dWtGaUF5T3B2RUJhM1ZyMmVUU1FLZnN5T2RkRUlWRHBFMll2MFk4Q0F3RUEKQVFLQ0FnRUFzdVd1bHJZdStQdWJEWG40V2FwaXp4SGlpM3RSNlF1MnRzVDdFR2ZzT2xlSitlOXVOaXJzcUdpawpvTkxhQ3VabmNKcG83Ym91MVNja05lemt0dlNqT1J4WVR0RDczQ0pnYjRBYU12cWlpUHRpYnRlUWVIUGtBQjAxCk1ESnZ6U2JpN0k0NldwMGtLU0ExMjRnbUp1K0tMYVo3WVJlemtxcUhiaEs3M2JvTmJYSGE5MFdzdlg4VG9sVUMKcVJCem1Vbmg0K0tKeWVWV0xuYkJjNG5JZ05ienN4a0lHWTdyMXNjT3JSeEpMOEI4eHVBTmtxc2s4dmNydHQ0ZgpLOThZUUt1cjZKa3lnWHFHYlVuL1BOZFVwMFdNd2YvQ2VpRCtZWDdyR3ZDWmNkMW40bDAzYjBtdnNDRHlyNEUzCjNuMjk2aG5YSjRWZHRmMnFnMmQvcFljSzY3eHlVTThnUlJzRC9hRzdBWmhlTmJsUXhXRGpadTYwcWRrTlRkK1YKc0JIWEMyS1FoQTN1ZzdwWDFoM1ZMbWUySElLZFJNL3FTbWpYSTIrRFZ3UmxzMjFabVp2K25FRUxRb29YWFVFMAozeEg2UnBXdWFTem1kcVVuVnRTbU5oT0V3ZElqVzRyRjVUa3krQkJNY3JyYTBwUi9qakZhNkg4aDJ0bHp2VU5sCm1oRlcvcUdlT250QytNSTZSbzN6UFNmL2hGNFRiSVkwMnozSjUycDlTSVh1dUhvVXVrZkk0SE12QndiNCtrMHgKMjBXeHZKVHBPaENBS0NoUVNqMG5oMk5GTGlpM1VNbldGQk12OTJSRGdyZ1ZNdkVPaFBqNUFLWnBlaXhwWkRZaApib04vRjZFWFZQcnBrR0FRRVRhNEFaRk1wbm51ZlpEeDk2ZUhrU2I1a2V4UThqN1pvaUVDZ2dFQkFPNU90a1ZFCjFVSWNFOWJ0SE9ScUlkd3NEQkVZTzBiZy9qUnNsQ0hIejVYc0JrZTkwMlhZWEdUNkFmaWRIM2dpUDdNWDFPWUwKVjFnMnVmeEtDYys0Sm5KT3J6YUZsbUN2UElQU1dZL2hHRnpDNFNDN2tmYVZWaG56d2R0TmVSWWo4OHFhbnlMcwo0aitrVDZSQXBEV1lYa2I4Kzg1c01Sb210UkRnU21hVFN6RzkwQkg0cEpxU3k0SEJEV2ZhY0Y2dE4wQXZpLy9aCjF6TmdZcTBRc3U1ZXZyN1U1dGhGU1V6aUJGZTE3SVpzdGxMaXBRQzF6TWdBM01ZamlpclU0TkViSmQ4ZWNwTS8KZHB5c3lIeXQyalZJSlBPK1o3UWRrZjFzQXVRdTUvOE5oeThHMnFMbHFjUEFjQVdTckVrTXQxZlREbXNUSE93Ugo5cUdTS2xSTmtuZGsvWmtDZ2dFQkFNdmZXVlAyaGN2ekxzaG9ieEdUbVlEb0RyZnVBVlg0bUUxRDdhblhuQlFTCk1GRGdsVHd2SU5xVWxBdWxnZFRJaDJLOFJWTkZtTXVoVzkwMjAzSmd0YTd5NmlCbVdTd1hIb2ZqVVNGSWpuQ24KS3B2Z0FnY1VsNFVXR1k3K3J5L1Q2eUk1TnBmaitCM3FKN0x5bCtPMkV4RzFTa3BhRmYxREFtb25pZDY5SUZ0NgpYeElHMUdSYmYvUkpSQXFPSndMczJhbXRsdGRQWm11eG1GWFhpdjlQRnk5RHJWaFZ2THVPRGppMWJOZ2JXK2ZhCjgxbDVhVEVid3B5NUR3VTVMRWIxN2t5cVNPdmorMzBGZnVIbVc2QVZ2U1dBck1TQVVkZUoxSmIzclo4STBlY2sKeE9yYU00eW5yVzJJQThrekhXUCtQNnNWSzRURDgydml2aUloZHQ5UHNXY0NnZ0VBYVA0UTNBL3BqVWpsak1uRwo4dk8zbTFOa3RadGhjbWJxV0pxRjRTUXhWekkzeWgvZUpYN2ZwalZuN09yODFHYnlmYXRBUjJJengwL0ZQVnc1CldtVWR1enJqZ3pmeit3RDV2bkpNdDFGSzlJTi93SFlqWnVxQWxzcUlYR0NUdXFkNFg0a2tGN1VhTVVQcE9zcW8KRGx6bEhJMlZPMnI3YnpRaWpoN2phTEg0YlIvZHJpMUlDRG9vb3pBMUFjNkJ0NVRGUk9ndDNEbFQwUFRrUksrWQp4ZURFVlR0andXRTFYRVF2K1p6VGFwNDI3ZW1oSE9EOEtob0hLdHk1b1FsTlM1T1VhZXIyTzkyNEdtc2RvYURQCkJLNldhVFU0WjJpbnkybHRGSzk5MHlkWXFlVnhLbGZaSmIrQkcxTjF5SEZyemF2VkxHT3RXR3pKcG9ISldIOGMKeXJHWjhRS0NBUUJaWWZIckV2RTBLc2svQ2pKdjlWTmVwZDhXR3Q0eEVBM09DbE1mbkswTVM3RXRORm1aaWx3UQpHUVlUV1J2ajY0c1g2YzFISmdOSWU5VW4xb3E3NGRTbUFGQlBwaS9BV2Q2RDIxRE5rOThIV3ZNZVpnYmRqZFNrCmY3enk2WXhySHJFL1R2QTFoYmhaZlRpc2h4bTZ0ekFER29XWXRZaGdna21EdXhRQ09NNy83RlhVTkhSWUQ1bTQKdzRwMlNqNm1WS3RWYmdydEdSMmhaN3FQSURJTG4yUmR6NEVuY21lTm4wbHk2Vy93QzRhdXoxclR4cHdzOEt2UgpSSDFtWDl1ZXZPSWVjS1lKN2VscnRjWWNTbit2WHZpUGdhdTlkempxazc1RjlnOEQ0NzBMWng2Q2pPbis1K0RzClhhNnpQcHJMSlVSS3dMeFV1QWg0SzNBS3pMc3VTdVZQQW9JQkFRQ2xCRzRrVGIrSi8vdkpnaVo2VmZvSHF4STgKbm5uQTRwWGwxODliQzhMMFlGc0tUSjZBWHd4T2FUdlZvcVdhL2dxeTVYRnpzb2NMRjBPNzZlUGw5RldVNCtJSwp1Y1hNc0ZEcnJ6bFppTG11dVpnVzBHVmdHdWJ2L3VTcTlpVE9rR2ZsSUxiWHIxYmU0UFV4a01RMG02eVhOZUgyCjZqNlc1SG9YUG8yWUhsNkt6QVNaUzhtTFRKdE03NkxEVVY4c3VPK011TEUxUW5hNnE4K0FPTEkra1RoTWFNK0cKakdWL0ErV0VNWFdsS0daRnNIK1MzcVBuczVwQnA1bnNhTlF1UDlsaERueWd5VU1RbUgyS3l4cUhhSzBMVHdoSwpsR05vd25zeTNtdUlEMEEzYStkZjVvdFRlL0FkWG95TDdsc0xhVGlWQkl3NzNFNG00YlNLVkVQbC9UWEMKLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0K\n    token: uzivy3chl9wgejofr46ljo7rtmev8fkux21ijeyv5zvizfdgyhcs6qcjc8ephwv7klzhfyispewuos8kgepihfm4gkrjgelklnvlkbuqunhiv2yurnpmjqowgku5dlmi\n",
+            "kubelet_identity": [
+              {
+                "client_id": "e24c0a4e-6e7a-4fb1-8730-090af511a0b8",
+                "object_id": "d3ec2cab-dfb7-4c5b-8305-4706b3a51a63",
+                "user_assigned_identity_id": "/subscriptions/642dd095-927a-4bdf-9152-d4f6609d0207/resourceGroups/MC_Dataplatform-Group-Monitoring_my-aks-cluster_westeurope/providers/Microsoft.ManagedIdentity/userAssignedIdentities/my-aks-cluster-agentpool"
+              }
+            ],
+            "kubernetes_version": "1.31",
+            "linux_profile": [
+              {
+                "admin_username": "",
+                "ssh_key": []
+              }
+            ],
+            "location": "westeurope",
+            "microsoft_defender": [],
+            "name": "my-aks-cluster",
+            "network_profile": [
+              {
+                "dns_service_ip": "10.0.0.10",
+                "docker_bridge_cidr": "",
+                "load_balancer_sku": "standard",
+                "network_plugin": "azure",
+                "network_policy": "none",
+                "pod_cidr": "",
+                "service_cidr": "10.0.0.0/16"
+              }
+            ],
+            "node_resource_group": "MC_Dataplatform-Group-Monitoring_my-aks-cluster_westeurope",
+            "node_resource_group_id": "/subscriptions/642dd095-927a-4bdf-9152-d4f6609d0207/resourceGroups/MC_Dataplatform-Group-Monitoring_my-aks-cluster_westeurope",
+            "oidc_issuer_enabled": true,
+            "oidc_issuer_url": "https://westeurope.oic.prod-aks.azure.com/a9f4aef9-8df7-4cc3-99a8-e85824715025/33cc9bfe-39a8-4008-a384-d4ec91eccbbb/",
+            "oms_agent": null,
+            "open_service_mesh_enabled": null,
+            "private_cluster_enabled": null,
+            "private_fqdn": "",
+            "resource_group_name": "Dataplatform-Group-Monitoring",
+            "role_based_access_control_enabled": true,
+            "service_mesh_profile": [],
+            "service_principal": [
+              {
+                "client_id": "msi"
+              }
+            ],
+            "storage_profile": [
+              {
+                "blob_driver_enabled": false,
+                "disk_driver_enabled": true,
+                "file_driver_enabled": true,
+                "snapshot_controller_enabled": true
+              }
+            ],
+            "tags": {
+              "Environment": "dev"
+            },
+            "timeouts": null,
+            "windows_profile": [
+              {
+                "admin_username": "azureuser"
+              }
+            ]
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_admin_config"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_config_raw"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_config"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_admin_config_raw"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "azurerm_resource_group",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/642dd095-927a-4bdf-9152-d4f6609d0207/resourceGroups/Dataplatform-Group-Monitoring",
+            "location": "westeurope",
+            "managed_by": "",
+            "name": "Dataplatform-Group-Monitoring",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "external",
+      "name": "enrollment_token",
+      "provider": "provider[\"registry.terraform.io/hashicorp/external\"]",
+      "instances": []
+    },
+    {
+      "mode": "data",
+      "type": "external",
+      "name": "verification_code",
+      "provider": "provider[\"registry.terraform.io/hashicorp/external\"]",
+      "instances": []
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_kubernetes_cluster",
+      "name": "aks",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "aci_connector_linux": [],
+            "api_server_access_profile": [],
+            "auto_scaler_profile": [
+              {
+                "balance_similar_node_groups": false,
+                "daemonset_eviction_for_empty_nodes_enabled": false,
+                "daemonset_eviction_for_occupied_nodes_enabled": true,
+                "empty_bulk_delete_max": "10",
+                "expander": "random",
+                "ignore_daemonsets_utilization_enabled": false,
+                "max_graceful_termination_sec": "600",
+                "max_node_provisioning_time": "15m",
+                "max_unready_nodes": 3,
+                "max_unready_percentage": 45,
+                "new_pod_scale_up_delay": "0s",
+                "scale_down_delay_after_add": "10m",
+                "scale_down_delay_after_delete": "10s",
+                "scale_down_delay_after_failure": "3m",
+                "scale_down_unneeded": "10m",
+                "scale_down_unready": "20m",
+                "scale_down_utilization_threshold": "0.5",
+                "scan_interval": "10s",
+                "skip_nodes_with_local_storage": false,
+                "skip_nodes_with_system_pods": true
+              }
+            ],
+            "automatic_upgrade_channel": "",
+            "azure_active_directory_role_based_access_control": [],
+            "azure_policy_enabled": null,
+            "confidential_computing": [],
+            "cost_analysis_enabled": false,
+            "current_kubernetes_version": "1.31.8",
+            "default_node_pool": [
+              {
+                "auto_scaling_enabled": true,
+                "capacity_reservation_group_id": "",
+                "fips_enabled": false,
+                "gpu_instance": "",
+                "host_encryption_enabled": false,
+                "host_group_id": "",
+                "kubelet_config": [],
+                "kubelet_disk_type": "OS",
+                "linux_os_config": [],
+                "max_count": 15,
+                "max_pods": 30,
+                "min_count": 1,
+                "name": "default",
+                "node_count": 1,
+                "node_labels": {},
+                "node_network_profile": [],
+                "node_public_ip_enabled": false,
+                "node_public_ip_prefix_id": "",
+                "only_critical_addons_enabled": false,
+                "orchestrator_version": "1.31",
+                "os_disk_size_gb": 50,
+                "os_disk_type": "Managed",
+                "os_sku": "Ubuntu",
+                "pod_subnet_id": "",
+                "proximity_placement_group_id": "",
+                "scale_down_mode": "Delete",
+                "snapshot_id": "",
+                "tags": {},
+                "temporary_name_for_rotation": "",
+                "type": "VirtualMachineScaleSets",
+                "ultra_ssd_enabled": false,
+                "upgrade_settings": [
+                  {
+                    "drain_timeout_in_minutes": 0,
+                    "max_surge": "10%",
+                    "node_soak_duration_in_minutes": 0
+                  }
+                ],
+                "vm_size": "Standard_DS3_v2",
+                "vnet_subnet_id": "",
+                "workload_runtime": "",
+                "zones": []
+              }
+            ],
+            "disk_encryption_set_id": "",
+            "dns_prefix": "myaksdns",
+            "dns_prefix_private_cluster": "",
+            "edge_zone": "",
+            "fqdn": "myaksdns-fz7rhomv.hcp.westeurope.azmk8s.io",
+            "http_application_routing_enabled": null,
+            "http_application_routing_zone_name": null,
+            "http_proxy_config": [],
+            "id": "/subscriptions/642dd095-927a-4bdf-9152-d4f6609d0207/resourceGroups/Dataplatform-Group-Monitoring/providers/Microsoft.ContainerService/managedClusters/my-aks-cluster",
+            "identity": [
+              {
+                "identity_ids": [],
+                "principal_id": "2de9f62d-b1f2-4d4c-a59e-c980bb56633b",
+                "tenant_id": "a9f4aef9-8df7-4cc3-99a8-e85824715025",
+                "type": "SystemAssigned"
+              }
+            ],
+            "image_cleaner_enabled": null,
+            "image_cleaner_interval_hours": null,
+            "ingress_application_gateway": [],
+            "key_management_service": [],
+            "key_vault_secrets_provider": [],
+            "kube_admin_config": [],
+            "kube_admin_config_raw": "",
+            "kube_config": [
+              {
+                "client_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZIakNDQXdhZ0F3SUJBZ0lSQUpxNEhZdXVrQSsxNjdVVFVIVEEyVjB3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpVd05qQTFNVFF4TkRJNFdoY05NamN3TmpBMU1UUXlOREk0V2pBdwpNUmN3RlFZRFZRUUtFdzV6ZVhOMFpXMDZiV0Z6ZEdWeWN6RVZNQk1HQTFVRUF4TU1iV0Z6ZEdWeVkyeHBaVzUwCk1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBdmNoVVFUcExibnBjUHoxY21PL00KcDdycml4RlYzdXdNNS9CK01lTlR1VTM3RE05MWxiVEdqZzZvTW8yVlF0dnFwWXdIR0VtbHJXM2NFWnVVZ2VRYwp6SUdveHI3UHVvSWVzR0hFNjlLam9hMUpNc0VOUUk0QkJ4ZE5Yek1naHhXd2QvSG9CTTRITkFIUnIrSG42WHNlCmRsNUUzbzRlOU11Zk02SWY0R1lFd1V6ZTJHMi9EY2dnOVRobTlYcXJhZ3c2czNzbml1ZzlSMXBnb01NdEs3Y3YKcDVzaWgzZWpxa0FldHc0b0hPR2s2a1BETGVSbWRqZUJmT0VGUlY2V3AxQUZRV3R5WStOYmNCZnJySFFpVGpJWApXbDBHQ0hPSWdFaDBNNm9md0pQVHp3NmlwQVRlYzFGNHk3SVh0K01DMjg1eHk5c084S3hqRjdnMUtXekxobmRKCklucGt4dzJTUjdvTXA3U1RLSDFPbjRQdlNBMm5TVk10UFdyRnBjbC9WZVA1UUdDbmJzTFl6bXJDRCtoN1htNEEKTnpjS3hRd1ViaTdESXRvY2dkK211NzkrdHJ3V2lwSERmbUQxTmNPS3pZT21NWXJsZUQzdlpWN3BpOU95TmJZaAprS29kL0RzWUlmNU1vZlFMTTkvbDFuZ05yOTExNjNGWWZVNHNNWTJjek1DMitvdGt2Wmt4NEZGdzE1S1JXaG1hCitNK3VKbzVaaWRJSzhLeGREUThYaDl5V3ZGNTcvS0o1UnZXKzh4QkVLOEFGODMzT1dMRkFLOGMzak9BZEc0d2kKWTh2T3NPQ0M0OFNHNitFZ2lNVWFuSnFUbElmb2ZZY053MEhLTCtYTXFwYklsY1p5dWtGaUF5T3B2RUJhM1ZyMgplVFNRS2ZzeU9kZEVJVkRwRTJZdjBZOENBd0VBQWFOV01GUXdEZ1lEVlIwUEFRSC9CQVFEQWdXZ01CTUdBMVVkCkpRUU1NQW9HQ0NzR0FRVUZCd01DTUF3R0ExVWRFd0VCL3dRQ01BQXdId1lEVlIwakJCZ3dGb0FVRVp4VXlLK0EKTnpEVEZvcnNOVGRrUU5kbkJQa3dEUVlKS29aSWh2Y05BUUVMQlFBRGdnSUJBTWpzUnhVTEVvaFNUang3SGlXLwplZ3NtTjMzelZnQ1pmRTliQXhRc2lsL1IyY1hCWlZmZ1NRT0xDaG5ldzh0dU5aODlNY3VBUWlITVdvRklTMndoCnBDSS9Bd3liOFdtODNQNC9RL1NKc0hLYm5ONzFmM1NGWVB2QVhKcGRTWEZ4TkFIVjNONFZ4L1BXbWxxcmZIa2YKNytwVC9BZE5SSEdwVVdpdjlrMVBjMm40WW00cnFPU21URUVCQlFvNEVMU1hQZy9nRGJPNnBOUVRQMGhqUHU5bQpjMDlKaUlvQ1BReXdXM0ZxMExlWjV5K0FsaFJWaDF2ZEFlQWRBUlRKYUFWYnFrZGJIUTRDN3BOQmpheGQ5S3k1CkZTVXNuSnFDNVBEOHZnUVNmN0VGSGYzU3FOaVh1YURJN3NtUmdtZCtlRis0SWNQOGNIcjJkaUpRTFBCWHRvOSsKNWMzSVZEV0s0V2paRzIyc2V0em9lUWh2ZHUrUEVCZ1ZUYlp0TzB1NU5UaFYxMElMMTByc0lma3YzejFCV1RZagpkMnlmblBXbThETlJFQ0JENEtEV0lKVTdkWUtLZ2w0d1J4SmZmSXpCRHRWcExaSFEzM2E3dThqVGJVL1ZramhFCjVNZVJjSWtKTko3bFd2UjJoUTY3NkgxcjJVblNPd1hLYkFxdVN3dE5heDdVVFBQRHN2Q3lkUWo2bXljZkdPcEcKUS9MWHVuZFMxbGlNNDdEcXI3ZEUxLzZIaWVKVGhtTVRITEFyOEl5anRXZ0E0VW91YkpHOTgvelZpcXl6WXZpSgpZcUE4VTU2RzBuWmdtTnlDRnY2WUk0QXd0OUZvWUxRckNYS0F4Q1BXQ2dCR01Sd1JTeVh0TDdlWTlFYVNPTjVxCnJxODA2R3ZpRGRTNk5HSmhOVVF5TUhFcwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                "client_key": "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKS1FJQkFBS0NBZ0VBdmNoVVFUcExibnBjUHoxY21PL01wN3JyaXhGVjN1d001L0IrTWVOVHVVMzdETTkxCmxiVEdqZzZvTW8yVlF0dnFwWXdIR0VtbHJXM2NFWnVVZ2VRY3pJR294cjdQdW9JZXNHSEU2OUtqb2ExSk1zRU4KUUk0QkJ4ZE5Yek1naHhXd2QvSG9CTTRITkFIUnIrSG42WHNlZGw1RTNvNGU5TXVmTTZJZjRHWUV3VXplMkcyLwpEY2dnOVRobTlYcXJhZ3c2czNzbml1ZzlSMXBnb01NdEs3Y3ZwNXNpaDNlanFrQWV0dzRvSE9HazZrUERMZVJtCmRqZUJmT0VGUlY2V3AxQUZRV3R5WStOYmNCZnJySFFpVGpJWFdsMEdDSE9JZ0VoME02b2Z3SlBUenc2aXBBVGUKYzFGNHk3SVh0K01DMjg1eHk5c084S3hqRjdnMUtXekxobmRKSW5wa3h3MlNSN29NcDdTVEtIMU9uNFB2U0EybgpTVk10UFdyRnBjbC9WZVA1UUdDbmJzTFl6bXJDRCtoN1htNEFOemNLeFF3VWJpN0RJdG9jZ2QrbXU3OSt0cndXCmlwSERmbUQxTmNPS3pZT21NWXJsZUQzdlpWN3BpOU95TmJZaGtLb2QvRHNZSWY1TW9mUUxNOS9sMW5nTnI5MTEKNjNGWWZVNHNNWTJjek1DMitvdGt2Wmt4NEZGdzE1S1JXaG1hK00rdUpvNVppZElLOEt4ZERROFhoOXlXdkY1NwovS0o1UnZXKzh4QkVLOEFGODMzT1dMRkFLOGMzak9BZEc0d2lZOHZPc09DQzQ4U0c2K0VnaU1VYW5KcVRsSWZvCmZZY053MEhLTCtYTXFwYklsY1p5dWtGaUF5T3B2RUJhM1ZyMmVUU1FLZnN5T2RkRUlWRHBFMll2MFk4Q0F3RUEKQVFLQ0FnRUFzdVd1bHJZdStQdWJEWG40V2FwaXp4SGlpM3RSNlF1MnRzVDdFR2ZzT2xlSitlOXVOaXJzcUdpawpvTkxhQ3VabmNKcG83Ym91MVNja05lemt0dlNqT1J4WVR0RDczQ0pnYjRBYU12cWlpUHRpYnRlUWVIUGtBQjAxCk1ESnZ6U2JpN0k0NldwMGtLU0ExMjRnbUp1K0tMYVo3WVJlemtxcUhiaEs3M2JvTmJYSGE5MFdzdlg4VG9sVUMKcVJCem1Vbmg0K0tKeWVWV0xuYkJjNG5JZ05ienN4a0lHWTdyMXNjT3JSeEpMOEI4eHVBTmtxc2s4dmNydHQ0ZgpLOThZUUt1cjZKa3lnWHFHYlVuL1BOZFVwMFdNd2YvQ2VpRCtZWDdyR3ZDWmNkMW40bDAzYjBtdnNDRHlyNEUzCjNuMjk2aG5YSjRWZHRmMnFnMmQvcFljSzY3eHlVTThnUlJzRC9hRzdBWmhlTmJsUXhXRGpadTYwcWRrTlRkK1YKc0JIWEMyS1FoQTN1ZzdwWDFoM1ZMbWUySElLZFJNL3FTbWpYSTIrRFZ3UmxzMjFabVp2K25FRUxRb29YWFVFMAozeEg2UnBXdWFTem1kcVVuVnRTbU5oT0V3ZElqVzRyRjVUa3krQkJNY3JyYTBwUi9qakZhNkg4aDJ0bHp2VU5sCm1oRlcvcUdlT250QytNSTZSbzN6UFNmL2hGNFRiSVkwMnozSjUycDlTSVh1dUhvVXVrZkk0SE12QndiNCtrMHgKMjBXeHZKVHBPaENBS0NoUVNqMG5oMk5GTGlpM1VNbldGQk12OTJSRGdyZ1ZNdkVPaFBqNUFLWnBlaXhwWkRZaApib04vRjZFWFZQcnBrR0FRRVRhNEFaRk1wbm51ZlpEeDk2ZUhrU2I1a2V4UThqN1pvaUVDZ2dFQkFPNU90a1ZFCjFVSWNFOWJ0SE9ScUlkd3NEQkVZTzBiZy9qUnNsQ0hIejVYc0JrZTkwMlhZWEdUNkFmaWRIM2dpUDdNWDFPWUwKVjFnMnVmeEtDYys0Sm5KT3J6YUZsbUN2UElQU1dZL2hHRnpDNFNDN2tmYVZWaG56d2R0TmVSWWo4OHFhbnlMcwo0aitrVDZSQXBEV1lYa2I4Kzg1c01Sb210UkRnU21hVFN6RzkwQkg0cEpxU3k0SEJEV2ZhY0Y2dE4wQXZpLy9aCjF6TmdZcTBRc3U1ZXZyN1U1dGhGU1V6aUJGZTE3SVpzdGxMaXBRQzF6TWdBM01ZamlpclU0TkViSmQ4ZWNwTS8KZHB5c3lIeXQyalZJSlBPK1o3UWRrZjFzQXVRdTUvOE5oeThHMnFMbHFjUEFjQVdTckVrTXQxZlREbXNUSE93Ugo5cUdTS2xSTmtuZGsvWmtDZ2dFQkFNdmZXVlAyaGN2ekxzaG9ieEdUbVlEb0RyZnVBVlg0bUUxRDdhblhuQlFTCk1GRGdsVHd2SU5xVWxBdWxnZFRJaDJLOFJWTkZtTXVoVzkwMjAzSmd0YTd5NmlCbVdTd1hIb2ZqVVNGSWpuQ24KS3B2Z0FnY1VsNFVXR1k3K3J5L1Q2eUk1TnBmaitCM3FKN0x5bCtPMkV4RzFTa3BhRmYxREFtb25pZDY5SUZ0NgpYeElHMUdSYmYvUkpSQXFPSndMczJhbXRsdGRQWm11eG1GWFhpdjlQRnk5RHJWaFZ2THVPRGppMWJOZ2JXK2ZhCjgxbDVhVEVid3B5NUR3VTVMRWIxN2t5cVNPdmorMzBGZnVIbVc2QVZ2U1dBck1TQVVkZUoxSmIzclo4STBlY2sKeE9yYU00eW5yVzJJQThrekhXUCtQNnNWSzRURDgydml2aUloZHQ5UHNXY0NnZ0VBYVA0UTNBL3BqVWpsak1uRwo4dk8zbTFOa3RadGhjbWJxV0pxRjRTUXhWekkzeWgvZUpYN2ZwalZuN09yODFHYnlmYXRBUjJJengwL0ZQVnc1CldtVWR1enJqZ3pmeit3RDV2bkpNdDFGSzlJTi93SFlqWnVxQWxzcUlYR0NUdXFkNFg0a2tGN1VhTVVQcE9zcW8KRGx6bEhJMlZPMnI3YnpRaWpoN2phTEg0YlIvZHJpMUlDRG9vb3pBMUFjNkJ0NVRGUk9ndDNEbFQwUFRrUksrWQp4ZURFVlR0andXRTFYRVF2K1p6VGFwNDI3ZW1oSE9EOEtob0hLdHk1b1FsTlM1T1VhZXIyTzkyNEdtc2RvYURQCkJLNldhVFU0WjJpbnkybHRGSzk5MHlkWXFlVnhLbGZaSmIrQkcxTjF5SEZyemF2VkxHT3RXR3pKcG9ISldIOGMKeXJHWjhRS0NBUUJaWWZIckV2RTBLc2svQ2pKdjlWTmVwZDhXR3Q0eEVBM09DbE1mbkswTVM3RXRORm1aaWx3UQpHUVlUV1J2ajY0c1g2YzFISmdOSWU5VW4xb3E3NGRTbUFGQlBwaS9BV2Q2RDIxRE5rOThIV3ZNZVpnYmRqZFNrCmY3enk2WXhySHJFL1R2QTFoYmhaZlRpc2h4bTZ0ekFER29XWXRZaGdna21EdXhRQ09NNy83RlhVTkhSWUQ1bTQKdzRwMlNqNm1WS3RWYmdydEdSMmhaN3FQSURJTG4yUmR6NEVuY21lTm4wbHk2Vy93QzRhdXoxclR4cHdzOEt2UgpSSDFtWDl1ZXZPSWVjS1lKN2VscnRjWWNTbit2WHZpUGdhdTlkempxazc1RjlnOEQ0NzBMWng2Q2pPbis1K0RzClhhNnpQcHJMSlVSS3dMeFV1QWg0SzNBS3pMc3VTdVZQQW9JQkFRQ2xCRzRrVGIrSi8vdkpnaVo2VmZvSHF4STgKbm5uQTRwWGwxODliQzhMMFlGc0tUSjZBWHd4T2FUdlZvcVdhL2dxeTVYRnpzb2NMRjBPNzZlUGw5RldVNCtJSwp1Y1hNc0ZEcnJ6bFppTG11dVpnVzBHVmdHdWJ2L3VTcTlpVE9rR2ZsSUxiWHIxYmU0UFV4a01RMG02eVhOZUgyCjZqNlc1SG9YUG8yWUhsNkt6QVNaUzhtTFRKdE03NkxEVVY4c3VPK011TEUxUW5hNnE4K0FPTEkra1RoTWFNK0cKakdWL0ErV0VNWFdsS0daRnNIK1MzcVBuczVwQnA1bnNhTlF1UDlsaERueWd5VU1RbUgyS3l4cUhhSzBMVHdoSwpsR05vd25zeTNtdUlEMEEzYStkZjVvdFRlL0FkWG95TDdsc0xhVGlWQkl3NzNFNG00YlNLVkVQbC9UWEMKLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0K",
+                "cluster_ca_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUU2VENDQXRHZ0F3SUJBZ0lSQU9zNTh2WTZ4UUNUa0htdjlobnBPNTh3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdJQmNOTWpVd05qQTFNVFF4TkRJNFdoZ1BNakExTlRBMk1EVXhOREkwTWpoYQpNQTB4Q3pBSkJnTlZCQU1UQW1OaE1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBCjA0dllyZ0k2U1AxSFlMOW5BdDR0b0ZldUtiT3loSk5CTW51QjJBUHY0K3gzalMxcjUxWXBXZXlxOXFYOFFIVE4KUk40bUp0NmxDZlUvYjd5MFcxTHVjYVVmRlJoOWNJQzBZaGtnMjhnWjBsZzVpL2FEUGt2ZHZTcnpDVnNCMEdhKwpWaWoxWWl5Um91UVlCUUk2czhDY1R2dGthWE9ndjRmSGV5ajZGYm9FU05lVDUzUm02alRYZlJwaFNLKzhvanFNCkRjT2RPVklYUnhDbi9LNzg1aVBXYStFeHB0anlyQm92WExXS3lqTlhKVlF1YVdmdXpaeFVJTUJNL04xY0RiaXIKMm1FRkk2Rk9YZ2lUaWhOdmZIc1NtUWRxdENldWt1SXlBQ2NSRU9TUWVFb0t2UE5JOHJLTmszRGYzUDJPTk9ESwpuVDJKQ0tpTDNqVDBSVnRUMHRMWElnYjRTRm9HTzBiMUNaUzJsVU9hYVh3cFl0RlZoWDJMV2NSU1NxK2p1WVdwClNQVzQ5WnlWS2RySUJPT2tlS1VTNUxCeUIvajhJQTEvSjkxN082VWdzZjkySU55b3R2ZVR0QmdrZWYxL2NCTzMKYWl2eVl3RGNVL3NrOWw5cnFiTXVWZDVsb3JEK0ZTSGVmaEdqTEVKOXBhbEVqUVRraUFhbERhV1owM3JSL0Jpbgo2eWZIUm9GN25uTEIrTllUQnAvZ2xPVkQ2bEZBYkJ5RVptVURSeWtRTFZmSU42NVBSdDBtdkVhSUhORHhMVVFmCmgraEdZNTQ4eE1ZY3A1ZGlDRFp4V21sOFFaN1ZLMThpMEtydGViRHczMzZUT2V2K2NuUmVTSWF6clFaTXdhR0gKaXF4TTdxRWFFbjRVT01TTnlaT1F5WXcyUXVjaTNmWHJ2VUhCMmtiUmlsY0NBd0VBQWFOQ01FQXdEZ1lEVlIwUApBUUgvQkFRREFnS2tNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGQkdjVk1pdmdEY3cweGFLCjdEVTNaRURYWndUNU1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQ0FRQjBaQmVXVUk4bk1SOTdqWk0yRWI5bnpUbXEKZllpM052K0Z1YUMvU0xIYktHOW9YOXdwSzc1dWVwUDJCN1lsSUlsSW43bzgzUXpKRU1vTGRlbm1lRitaVStpWQpWUlR5SDFqMWU0QTNGTFFNQlVOaDVRazNSbUNhMStZaEh2Q1VoWGJIRmNzZU1EL1NVK0tSWVIvdnRpdWxHdVIwCldSU3R6RmE3Zk40dnVYM1NiOE9TNkJrejZjOFJaTFpKUVdxQlJwdSt1SWlKUWlUeFlBdEpnbGFqNlllT2gxUmwKS29GaUxlT1JuNjQ5a2pCMVJQZmJsRjRQWFlPWnpGYW1rTXBBeWNDeFJTeUZHMHVCNE1sWkE3MmMzT3VRN2RacgovTEh2cXBaM1ZqeTY4cCtaSGdaUEdaSllvNkNOVk1MbkZGM2N6Wi9sUmM2WEljMGN6dFgreDA3TXhLeTZydC85Cm5vN01jMStoeUtXWGJmQis4L3hHazVJMGVEQXYxN2VnUHVuZ3cwNHpGVVBsVTd3T0htK0FGRGFnek53MFdlSTUKRkYvRDVhTDFYMElyeG1Nbmg5Q01XbDZHbjZuUC9HRHVJbW13Z1ZyTDkwZ3hSN1c1WFNuQ21nbXBXVmFEVmF1eApkOTdZajNWL0Vkekt6aFBtb2FRS1pxRHBEOERxUlo1TnhsZ2IxRHEvb3VLcnJJNkNFSENwTUltZVNZRFlZakhPClgvcWdyMFVqbHdUM3lUR3RYMXd1ZDFKNS9nbE50dmdhUXZGU2FaNjR3endRNWtwcnZiY2s0RnBnNVF5b0JWWUoKN1E0YW12TlBmWjI2ckhwUEhVaDI0NnBpclB2NUp6SVQrc05kQlZ5Nm94MjB5T3cxbnRCRTh4SWtCZFhOT3hvNQpPbkRiWWtPeFBwWFVjUmlPNlE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                "host": "https://myaksdns-fz7rhomv.hcp.westeurope.azmk8s.io:443",
+                "password": "uzivy3chl9wgejofr46ljo7rtmev8fkux21ijeyv5zvizfdgyhcs6qcjc8ephwv7klzhfyispewuos8kgepihfm4gkrjgelklnvlkbuqunhiv2yurnpmjqowgku5dlmi",
+                "username": "clusterUser_Dataplatform-Group-Monitoring_my-aks-cluster"
+              }
+            ],
+            "kube_config_raw": "apiVersion: v1\nclusters:\n- cluster:\n    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUU2VENDQXRHZ0F3SUJBZ0lSQU9zNTh2WTZ4UUNUa0htdjlobnBPNTh3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdJQmNOTWpVd05qQTFNVFF4TkRJNFdoZ1BNakExTlRBMk1EVXhOREkwTWpoYQpNQTB4Q3pBSkJnTlZCQU1UQW1OaE1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBCjA0dllyZ0k2U1AxSFlMOW5BdDR0b0ZldUtiT3loSk5CTW51QjJBUHY0K3gzalMxcjUxWXBXZXlxOXFYOFFIVE4KUk40bUp0NmxDZlUvYjd5MFcxTHVjYVVmRlJoOWNJQzBZaGtnMjhnWjBsZzVpL2FEUGt2ZHZTcnpDVnNCMEdhKwpWaWoxWWl5Um91UVlCUUk2czhDY1R2dGthWE9ndjRmSGV5ajZGYm9FU05lVDUzUm02alRYZlJwaFNLKzhvanFNCkRjT2RPVklYUnhDbi9LNzg1aVBXYStFeHB0anlyQm92WExXS3lqTlhKVlF1YVdmdXpaeFVJTUJNL04xY0RiaXIKMm1FRkk2Rk9YZ2lUaWhOdmZIc1NtUWRxdENldWt1SXlBQ2NSRU9TUWVFb0t2UE5JOHJLTmszRGYzUDJPTk9ESwpuVDJKQ0tpTDNqVDBSVnRUMHRMWElnYjRTRm9HTzBiMUNaUzJsVU9hYVh3cFl0RlZoWDJMV2NSU1NxK2p1WVdwClNQVzQ5WnlWS2RySUJPT2tlS1VTNUxCeUIvajhJQTEvSjkxN082VWdzZjkySU55b3R2ZVR0QmdrZWYxL2NCTzMKYWl2eVl3RGNVL3NrOWw5cnFiTXVWZDVsb3JEK0ZTSGVmaEdqTEVKOXBhbEVqUVRraUFhbERhV1owM3JSL0Jpbgo2eWZIUm9GN25uTEIrTllUQnAvZ2xPVkQ2bEZBYkJ5RVptVURSeWtRTFZmSU42NVBSdDBtdkVhSUhORHhMVVFmCmgraEdZNTQ4eE1ZY3A1ZGlDRFp4V21sOFFaN1ZLMThpMEtydGViRHczMzZUT2V2K2NuUmVTSWF6clFaTXdhR0gKaXF4TTdxRWFFbjRVT01TTnlaT1F5WXcyUXVjaTNmWHJ2VUhCMmtiUmlsY0NBd0VBQWFOQ01FQXdEZ1lEVlIwUApBUUgvQkFRREFnS2tNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGQkdjVk1pdmdEY3cweGFLCjdEVTNaRURYWndUNU1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQ0FRQjBaQmVXVUk4bk1SOTdqWk0yRWI5bnpUbXEKZllpM052K0Z1YUMvU0xIYktHOW9YOXdwSzc1dWVwUDJCN1lsSUlsSW43bzgzUXpKRU1vTGRlbm1lRitaVStpWQpWUlR5SDFqMWU0QTNGTFFNQlVOaDVRazNSbUNhMStZaEh2Q1VoWGJIRmNzZU1EL1NVK0tSWVIvdnRpdWxHdVIwCldSU3R6RmE3Zk40dnVYM1NiOE9TNkJrejZjOFJaTFpKUVdxQlJwdSt1SWlKUWlUeFlBdEpnbGFqNlllT2gxUmwKS29GaUxlT1JuNjQ5a2pCMVJQZmJsRjRQWFlPWnpGYW1rTXBBeWNDeFJTeUZHMHVCNE1sWkE3MmMzT3VRN2RacgovTEh2cXBaM1ZqeTY4cCtaSGdaUEdaSllvNkNOVk1MbkZGM2N6Wi9sUmM2WEljMGN6dFgreDA3TXhLeTZydC85Cm5vN01jMStoeUtXWGJmQis4L3hHazVJMGVEQXYxN2VnUHVuZ3cwNHpGVVBsVTd3T0htK0FGRGFnek53MFdlSTUKRkYvRDVhTDFYMElyeG1Nbmg5Q01XbDZHbjZuUC9HRHVJbW13Z1ZyTDkwZ3hSN1c1WFNuQ21nbXBXVmFEVmF1eApkOTdZajNWL0Vkekt6aFBtb2FRS1pxRHBEOERxUlo1TnhsZ2IxRHEvb3VLcnJJNkNFSENwTUltZVNZRFlZakhPClgvcWdyMFVqbHdUM3lUR3RYMXd1ZDFKNS9nbE50dmdhUXZGU2FaNjR3endRNWtwcnZiY2s0RnBnNVF5b0JWWUoKN1E0YW12TlBmWjI2ckhwUEhVaDI0NnBpclB2NUp6SVQrc05kQlZ5Nm94MjB5T3cxbnRCRTh4SWtCZFhOT3hvNQpPbkRiWWtPeFBwWFVjUmlPNlE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\n    server: https://myaksdns-fz7rhomv.hcp.westeurope.azmk8s.io:443\n  name: my-aks-cluster\ncontexts:\n- context:\n    cluster: my-aks-cluster\n    user: clusterUser_Dataplatform-Group-Monitoring_my-aks-cluster\n  name: my-aks-cluster\ncurrent-context: my-aks-cluster\nkind: Config\npreferences: {}\nusers:\n- name: clusterUser_Dataplatform-Group-Monitoring_my-aks-cluster\n  user:\n    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZIakNDQXdhZ0F3SUJBZ0lSQUpxNEhZdXVrQSsxNjdVVFVIVEEyVjB3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpVd05qQTFNVFF4TkRJNFdoY05NamN3TmpBMU1UUXlOREk0V2pBdwpNUmN3RlFZRFZRUUtFdzV6ZVhOMFpXMDZiV0Z6ZEdWeWN6RVZNQk1HQTFVRUF4TU1iV0Z6ZEdWeVkyeHBaVzUwCk1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBdmNoVVFUcExibnBjUHoxY21PL00KcDdycml4RlYzdXdNNS9CK01lTlR1VTM3RE05MWxiVEdqZzZvTW8yVlF0dnFwWXdIR0VtbHJXM2NFWnVVZ2VRYwp6SUdveHI3UHVvSWVzR0hFNjlLam9hMUpNc0VOUUk0QkJ4ZE5Yek1naHhXd2QvSG9CTTRITkFIUnIrSG42WHNlCmRsNUUzbzRlOU11Zk02SWY0R1lFd1V6ZTJHMi9EY2dnOVRobTlYcXJhZ3c2czNzbml1ZzlSMXBnb01NdEs3Y3YKcDVzaWgzZWpxa0FldHc0b0hPR2s2a1BETGVSbWRqZUJmT0VGUlY2V3AxQUZRV3R5WStOYmNCZnJySFFpVGpJWApXbDBHQ0hPSWdFaDBNNm9md0pQVHp3NmlwQVRlYzFGNHk3SVh0K01DMjg1eHk5c084S3hqRjdnMUtXekxobmRKCklucGt4dzJTUjdvTXA3U1RLSDFPbjRQdlNBMm5TVk10UFdyRnBjbC9WZVA1UUdDbmJzTFl6bXJDRCtoN1htNEEKTnpjS3hRd1ViaTdESXRvY2dkK211NzkrdHJ3V2lwSERmbUQxTmNPS3pZT21NWXJsZUQzdlpWN3BpOU95TmJZaAprS29kL0RzWUlmNU1vZlFMTTkvbDFuZ05yOTExNjNGWWZVNHNNWTJjek1DMitvdGt2Wmt4NEZGdzE1S1JXaG1hCitNK3VKbzVaaWRJSzhLeGREUThYaDl5V3ZGNTcvS0o1UnZXKzh4QkVLOEFGODMzT1dMRkFLOGMzak9BZEc0d2kKWTh2T3NPQ0M0OFNHNitFZ2lNVWFuSnFUbElmb2ZZY053MEhLTCtYTXFwYklsY1p5dWtGaUF5T3B2RUJhM1ZyMgplVFNRS2ZzeU9kZEVJVkRwRTJZdjBZOENBd0VBQWFOV01GUXdEZ1lEVlIwUEFRSC9CQVFEQWdXZ01CTUdBMVVkCkpRUU1NQW9HQ0NzR0FRVUZCd01DTUF3R0ExVWRFd0VCL3dRQ01BQXdId1lEVlIwakJCZ3dGb0FVRVp4VXlLK0EKTnpEVEZvcnNOVGRrUU5kbkJQa3dEUVlKS29aSWh2Y05BUUVMQlFBRGdnSUJBTWpzUnhVTEVvaFNUang3SGlXLwplZ3NtTjMzelZnQ1pmRTliQXhRc2lsL1IyY1hCWlZmZ1NRT0xDaG5ldzh0dU5aODlNY3VBUWlITVdvRklTMndoCnBDSS9Bd3liOFdtODNQNC9RL1NKc0hLYm5ONzFmM1NGWVB2QVhKcGRTWEZ4TkFIVjNONFZ4L1BXbWxxcmZIa2YKNytwVC9BZE5SSEdwVVdpdjlrMVBjMm40WW00cnFPU21URUVCQlFvNEVMU1hQZy9nRGJPNnBOUVRQMGhqUHU5bQpjMDlKaUlvQ1BReXdXM0ZxMExlWjV5K0FsaFJWaDF2ZEFlQWRBUlRKYUFWYnFrZGJIUTRDN3BOQmpheGQ5S3k1CkZTVXNuSnFDNVBEOHZnUVNmN0VGSGYzU3FOaVh1YURJN3NtUmdtZCtlRis0SWNQOGNIcjJkaUpRTFBCWHRvOSsKNWMzSVZEV0s0V2paRzIyc2V0em9lUWh2ZHUrUEVCZ1ZUYlp0TzB1NU5UaFYxMElMMTByc0lma3YzejFCV1RZagpkMnlmblBXbThETlJFQ0JENEtEV0lKVTdkWUtLZ2w0d1J4SmZmSXpCRHRWcExaSFEzM2E3dThqVGJVL1ZramhFCjVNZVJjSWtKTko3bFd2UjJoUTY3NkgxcjJVblNPd1hLYkFxdVN3dE5heDdVVFBQRHN2Q3lkUWo2bXljZkdPcEcKUS9MWHVuZFMxbGlNNDdEcXI3ZEUxLzZIaWVKVGhtTVRITEFyOEl5anRXZ0E0VW91YkpHOTgvelZpcXl6WXZpSgpZcUE4VTU2RzBuWmdtTnlDRnY2WUk0QXd0OUZvWUxRckNYS0F4Q1BXQ2dCR01Sd1JTeVh0TDdlWTlFYVNPTjVxCnJxODA2R3ZpRGRTNk5HSmhOVVF5TUhFcwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\n    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKS1FJQkFBS0NBZ0VBdmNoVVFUcExibnBjUHoxY21PL01wN3JyaXhGVjN1d001L0IrTWVOVHVVMzdETTkxCmxiVEdqZzZvTW8yVlF0dnFwWXdIR0VtbHJXM2NFWnVVZ2VRY3pJR294cjdQdW9JZXNHSEU2OUtqb2ExSk1zRU4KUUk0QkJ4ZE5Yek1naHhXd2QvSG9CTTRITkFIUnIrSG42WHNlZGw1RTNvNGU5TXVmTTZJZjRHWUV3VXplMkcyLwpEY2dnOVRobTlYcXJhZ3c2czNzbml1ZzlSMXBnb01NdEs3Y3ZwNXNpaDNlanFrQWV0dzRvSE9HazZrUERMZVJtCmRqZUJmT0VGUlY2V3AxQUZRV3R5WStOYmNCZnJySFFpVGpJWFdsMEdDSE9JZ0VoME02b2Z3SlBUenc2aXBBVGUKYzFGNHk3SVh0K01DMjg1eHk5c084S3hqRjdnMUtXekxobmRKSW5wa3h3MlNSN29NcDdTVEtIMU9uNFB2U0EybgpTVk10UFdyRnBjbC9WZVA1UUdDbmJzTFl6bXJDRCtoN1htNEFOemNLeFF3VWJpN0RJdG9jZ2QrbXU3OSt0cndXCmlwSERmbUQxTmNPS3pZT21NWXJsZUQzdlpWN3BpOU95TmJZaGtLb2QvRHNZSWY1TW9mUUxNOS9sMW5nTnI5MTEKNjNGWWZVNHNNWTJjek1DMitvdGt2Wmt4NEZGdzE1S1JXaG1hK00rdUpvNVppZElLOEt4ZERROFhoOXlXdkY1NwovS0o1UnZXKzh4QkVLOEFGODMzT1dMRkFLOGMzak9BZEc0d2lZOHZPc09DQzQ4U0c2K0VnaU1VYW5KcVRsSWZvCmZZY053MEhLTCtYTXFwYklsY1p5dWtGaUF5T3B2RUJhM1ZyMmVUU1FLZnN5T2RkRUlWRHBFMll2MFk4Q0F3RUEKQVFLQ0FnRUFzdVd1bHJZdStQdWJEWG40V2FwaXp4SGlpM3RSNlF1MnRzVDdFR2ZzT2xlSitlOXVOaXJzcUdpawpvTkxhQ3VabmNKcG83Ym91MVNja05lemt0dlNqT1J4WVR0RDczQ0pnYjRBYU12cWlpUHRpYnRlUWVIUGtBQjAxCk1ESnZ6U2JpN0k0NldwMGtLU0ExMjRnbUp1K0tMYVo3WVJlemtxcUhiaEs3M2JvTmJYSGE5MFdzdlg4VG9sVUMKcVJCem1Vbmg0K0tKeWVWV0xuYkJjNG5JZ05ienN4a0lHWTdyMXNjT3JSeEpMOEI4eHVBTmtxc2s4dmNydHQ0ZgpLOThZUUt1cjZKa3lnWHFHYlVuL1BOZFVwMFdNd2YvQ2VpRCtZWDdyR3ZDWmNkMW40bDAzYjBtdnNDRHlyNEUzCjNuMjk2aG5YSjRWZHRmMnFnMmQvcFljSzY3eHlVTThnUlJzRC9hRzdBWmhlTmJsUXhXRGpadTYwcWRrTlRkK1YKc0JIWEMyS1FoQTN1ZzdwWDFoM1ZMbWUySElLZFJNL3FTbWpYSTIrRFZ3UmxzMjFabVp2K25FRUxRb29YWFVFMAozeEg2UnBXdWFTem1kcVVuVnRTbU5oT0V3ZElqVzRyRjVUa3krQkJNY3JyYTBwUi9qakZhNkg4aDJ0bHp2VU5sCm1oRlcvcUdlT250QytNSTZSbzN6UFNmL2hGNFRiSVkwMnozSjUycDlTSVh1dUhvVXVrZkk0SE12QndiNCtrMHgKMjBXeHZKVHBPaENBS0NoUVNqMG5oMk5GTGlpM1VNbldGQk12OTJSRGdyZ1ZNdkVPaFBqNUFLWnBlaXhwWkRZaApib04vRjZFWFZQcnBrR0FRRVRhNEFaRk1wbm51ZlpEeDk2ZUhrU2I1a2V4UThqN1pvaUVDZ2dFQkFPNU90a1ZFCjFVSWNFOWJ0SE9ScUlkd3NEQkVZTzBiZy9qUnNsQ0hIejVYc0JrZTkwMlhZWEdUNkFmaWRIM2dpUDdNWDFPWUwKVjFnMnVmeEtDYys0Sm5KT3J6YUZsbUN2UElQU1dZL2hHRnpDNFNDN2tmYVZWaG56d2R0TmVSWWo4OHFhbnlMcwo0aitrVDZSQXBEV1lYa2I4Kzg1c01Sb210UkRnU21hVFN6RzkwQkg0cEpxU3k0SEJEV2ZhY0Y2dE4wQXZpLy9aCjF6TmdZcTBRc3U1ZXZyN1U1dGhGU1V6aUJGZTE3SVpzdGxMaXBRQzF6TWdBM01ZamlpclU0TkViSmQ4ZWNwTS8KZHB5c3lIeXQyalZJSlBPK1o3UWRrZjFzQXVRdTUvOE5oeThHMnFMbHFjUEFjQVdTckVrTXQxZlREbXNUSE93Ugo5cUdTS2xSTmtuZGsvWmtDZ2dFQkFNdmZXVlAyaGN2ekxzaG9ieEdUbVlEb0RyZnVBVlg0bUUxRDdhblhuQlFTCk1GRGdsVHd2SU5xVWxBdWxnZFRJaDJLOFJWTkZtTXVoVzkwMjAzSmd0YTd5NmlCbVdTd1hIb2ZqVVNGSWpuQ24KS3B2Z0FnY1VsNFVXR1k3K3J5L1Q2eUk1TnBmaitCM3FKN0x5bCtPMkV4RzFTa3BhRmYxREFtb25pZDY5SUZ0NgpYeElHMUdSYmYvUkpSQXFPSndMczJhbXRsdGRQWm11eG1GWFhpdjlQRnk5RHJWaFZ2THVPRGppMWJOZ2JXK2ZhCjgxbDVhVEVid3B5NUR3VTVMRWIxN2t5cVNPdmorMzBGZnVIbVc2QVZ2U1dBck1TQVVkZUoxSmIzclo4STBlY2sKeE9yYU00eW5yVzJJQThrekhXUCtQNnNWSzRURDgydml2aUloZHQ5UHNXY0NnZ0VBYVA0UTNBL3BqVWpsak1uRwo4dk8zbTFOa3RadGhjbWJxV0pxRjRTUXhWekkzeWgvZUpYN2ZwalZuN09yODFHYnlmYXRBUjJJengwL0ZQVnc1CldtVWR1enJqZ3pmeit3RDV2bkpNdDFGSzlJTi93SFlqWnVxQWxzcUlYR0NUdXFkNFg0a2tGN1VhTVVQcE9zcW8KRGx6bEhJMlZPMnI3YnpRaWpoN2phTEg0YlIvZHJpMUlDRG9vb3pBMUFjNkJ0NVRGUk9ndDNEbFQwUFRrUksrWQp4ZURFVlR0andXRTFYRVF2K1p6VGFwNDI3ZW1oSE9EOEtob0hLdHk1b1FsTlM1T1VhZXIyTzkyNEdtc2RvYURQCkJLNldhVFU0WjJpbnkybHRGSzk5MHlkWXFlVnhLbGZaSmIrQkcxTjF5SEZyemF2VkxHT3RXR3pKcG9ISldIOGMKeXJHWjhRS0NBUUJaWWZIckV2RTBLc2svQ2pKdjlWTmVwZDhXR3Q0eEVBM09DbE1mbkswTVM3RXRORm1aaWx3UQpHUVlUV1J2ajY0c1g2YzFISmdOSWU5VW4xb3E3NGRTbUFGQlBwaS9BV2Q2RDIxRE5rOThIV3ZNZVpnYmRqZFNrCmY3enk2WXhySHJFL1R2QTFoYmhaZlRpc2h4bTZ0ekFER29XWXRZaGdna21EdXhRQ09NNy83RlhVTkhSWUQ1bTQKdzRwMlNqNm1WS3RWYmdydEdSMmhaN3FQSURJTG4yUmR6NEVuY21lTm4wbHk2Vy93QzRhdXoxclR4cHdzOEt2UgpSSDFtWDl1ZXZPSWVjS1lKN2VscnRjWWNTbit2WHZpUGdhdTlkempxazc1RjlnOEQ0NzBMWng2Q2pPbis1K0RzClhhNnpQcHJMSlVSS3dMeFV1QWg0SzNBS3pMc3VTdVZQQW9JQkFRQ2xCRzRrVGIrSi8vdkpnaVo2VmZvSHF4STgKbm5uQTRwWGwxODliQzhMMFlGc0tUSjZBWHd4T2FUdlZvcVdhL2dxeTVYRnpzb2NMRjBPNzZlUGw5RldVNCtJSwp1Y1hNc0ZEcnJ6bFppTG11dVpnVzBHVmdHdWJ2L3VTcTlpVE9rR2ZsSUxiWHIxYmU0UFV4a01RMG02eVhOZUgyCjZqNlc1SG9YUG8yWUhsNkt6QVNaUzhtTFRKdE03NkxEVVY4c3VPK011TEUxUW5hNnE4K0FPTEkra1RoTWFNK0cKakdWL0ErV0VNWFdsS0daRnNIK1MzcVBuczVwQnA1bnNhTlF1UDlsaERueWd5VU1RbUgyS3l4cUhhSzBMVHdoSwpsR05vd25zeTNtdUlEMEEzYStkZjVvdFRlL0FkWG95TDdsc0xhVGlWQkl3NzNFNG00YlNLVkVQbC9UWEMKLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0K\n    token: uzivy3chl9wgejofr46ljo7rtmev8fkux21ijeyv5zvizfdgyhcs6qcjc8ephwv7klzhfyispewuos8kgepihfm4gkrjgelklnvlkbuqunhiv2yurnpmjqowgku5dlmi\n",
+            "kubelet_identity": [
+              {
+                "client_id": "e24c0a4e-6e7a-4fb1-8730-090af511a0b8",
+                "object_id": "d3ec2cab-dfb7-4c5b-8305-4706b3a51a63",
+                "user_assigned_identity_id": "/subscriptions/642dd095-927a-4bdf-9152-d4f6609d0207/resourceGroups/MC_Dataplatform-Group-Monitoring_my-aks-cluster_westeurope/providers/Microsoft.ManagedIdentity/userAssignedIdentities/my-aks-cluster-agentpool"
+              }
+            ],
+            "kubernetes_version": "1.31",
+            "linux_profile": [],
+            "local_account_disabled": false,
+            "location": "westeurope",
+            "maintenance_window": [],
+            "maintenance_window_auto_upgrade": [],
+            "maintenance_window_node_os": [],
+            "microsoft_defender": [],
+            "monitor_metrics": [],
+            "name": "my-aks-cluster",
+            "network_profile": [
+              {
+                "dns_service_ip": "10.0.0.10",
+                "ip_versions": [
+                  "IPv4"
+                ],
+                "load_balancer_profile": [
+                  {
+                    "backend_pool_type": "NodeIPConfiguration",
+                    "effective_outbound_ips": [
+                      "/subscriptions/642dd095-927a-4bdf-9152-d4f6609d0207/resourceGroups/MC_Dataplatform-Group-Monitoring_my-aks-cluster_westeurope/providers/Microsoft.Network/publicIPAddresses/52347007-bb53-4890-89d6-1b7cd3cf018d"
+                    ],
+                    "idle_timeout_in_minutes": 0,
+                    "managed_outbound_ip_count": 1,
+                    "managed_outbound_ipv6_count": 0,
+                    "outbound_ip_address_ids": [],
+                    "outbound_ip_prefix_ids": [],
+                    "outbound_ports_allocated": 0
+                  }
+                ],
+                "load_balancer_sku": "standard",
+                "nat_gateway_profile": [],
+                "network_data_plane": "azure",
+                "network_mode": "",
+                "network_plugin": "azure",
+                "network_plugin_mode": "",
+                "network_policy": "",
+                "outbound_type": "loadBalancer",
+                "pod_cidr": "",
+                "pod_cidrs": [],
+                "service_cidr": "10.0.0.0/16",
+                "service_cidrs": [
+                  "10.0.0.0/16"
+                ]
+              }
+            ],
+            "node_os_upgrade_channel": "NodeImage",
+            "node_resource_group": "MC_Dataplatform-Group-Monitoring_my-aks-cluster_westeurope",
+            "node_resource_group_id": "/subscriptions/642dd095-927a-4bdf-9152-d4f6609d0207/resourceGroups/MC_Dataplatform-Group-Monitoring_my-aks-cluster_westeurope",
+            "oidc_issuer_enabled": true,
+            "oidc_issuer_url": "https://westeurope.oic.prod-aks.azure.com/a9f4aef9-8df7-4cc3-99a8-e85824715025/33cc9bfe-39a8-4008-a384-d4ec91eccbbb/",
+            "oms_agent": [],
+            "open_service_mesh_enabled": null,
+            "portal_fqdn": "myaksdns-fz7rhomv.portal.hcp.westeurope.azmk8s.io",
+            "private_cluster_enabled": false,
+            "private_cluster_public_fqdn_enabled": false,
+            "private_dns_zone_id": "",
+            "private_fqdn": "",
+            "resource_group_name": "Dataplatform-Group-Monitoring",
+            "role_based_access_control_enabled": true,
+            "run_command_enabled": true,
+            "service_mesh_profile": [],
+            "service_principal": [],
+            "sku_tier": "Free",
+            "storage_profile": [],
+            "support_plan": "KubernetesOfficial",
+            "tags": {
+              "Environment": "dev"
+            },
+            "timeouts": null,
+            "upgrade_override": [],
+            "web_app_routing": [],
+            "windows_profile": [
+              {
+                "admin_password": "",
+                "admin_username": "azureuser",
+                "gmsa": [],
+                "license": ""
+              }
+            ],
+            "workload_autoscaler_profile": [],
+            "workload_identity_enabled": false
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "windows_profile"
+              },
+              {
+                "type": "index",
+                "value": {
+                  "value": 0,
+                  "type": "number"
+                }
+              },
+              {
+                "type": "get_attr",
+                "value": "admin_password"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_admin_config"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_config"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_admin_config_raw"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_config_raw"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIyIn0=",
+          "dependencies": [
+            "data.azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_config_map",
+      "name": "elasticsearch_config",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "binary_data": {},
+            "data": {
+              "elasticsearch.yml": "    cluster.name: \"elk-cluster\"\r\n    node.name: \"elasticsearch\"\r\n    network.host: \"0.0.0.0\"\r\n    http.port: 9200\r\n    discovery.seed_hosts: [\"elasticsearch.default.svc.cluster.local\"]\r\n    path.data: /usr/share/elasticsearch/data\r\n    path.logs: /usr/share/elasticsearch/logs\r\n    xpack.security.enabled: false\r\n    xpack.security.enrollment.enabled: false\r\n"
+            },
+            "id": "default/elasticsearch-config",
+            "immutable": false,
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "elasticsearch-config",
+                "namespace": "default",
+                "resource_version": "1387",
+                "uid": "6a9e0ce8-a6f3-4bda-a0e3-c731dbbdedae"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_config_map",
+      "name": "logstash_config",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "binary_data": {},
+            "data": {
+              "logstash.yml": "http.host: \"0.0.0.0\"\r\nxpack.monitoring.enabled: false\r\n"
+            },
+            "id": "default/logstash-config",
+            "immutable": false,
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "logstash-config",
+                "namespace": "default",
+                "resource_version": "1402",
+                "uid": "ec376876-de71-4a9c-a18f-3b8e70f3ef95"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_config_map",
+      "name": "logstash_config2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "binary_data": {},
+            "data": {
+              "logstash.conf": "input {\r\n  beats {\r\n    port =\u003e 5044\r\n  }\r\n}\r\n\r\noutput {\r\n  stdout { codec =\u003e rubydebug }\r\n  elasticsearch {\r\n    hosts =\u003e [\"http://elasticsearch:9200\"]\r\n    index =\u003e \"logstash-%{+YYYY.MM.dd}\"\r\n  }\r\n}\r\n"
+            },
+            "id": "default/logstash-pipeline-config",
+            "immutable": false,
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "logstash-pipeline-config",
+                "namespace": "default",
+                "resource_version": "94491",
+                "uid": "d43a0f51-e65b-4dce-bdf8-d23b720b9032"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_persistent_volume_claim.elk_pvc",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_config_map",
+      "name": "logstash_pipelines",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "binary_data": {},
+            "data": {
+              "pipelines.yml": "- pipeline.id: main\r\n  path.config: \"/usr/share/logstash/pipeline/logstash.conf\"\r\n"
+            },
+            "id": "default/logstash-pipelines",
+            "immutable": false,
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "logstash-pipelines",
+                "namespace": "default",
+                "resource_version": "1404",
+                "uid": "abf463c9-6f9b-4e5c-ba65-52506abcc525"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_deployment",
+      "name": "elasticsearch",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/elasticsearch",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 1,
+                "labels": {
+                  "app": "elasticsearch"
+                },
+                "name": "elasticsearch",
+                "namespace": "default",
+                "resource_version": "312758",
+                "uid": "e1a8a79e-1817-44d1-9cbc-d355c9bf6109"
+              }
+            ],
+            "spec": [
+              {
+                "min_ready_seconds": 0,
+                "paused": false,
+                "progress_deadline_seconds": 600,
+                "replicas": "1",
+                "revision_history_limit": 10,
+                "selector": [
+                  {
+                    "match_expressions": [],
+                    "match_labels": {
+                      "app": "elasticsearch"
+                    }
+                  }
+                ],
+                "strategy": [
+                  {
+                    "rolling_update": [
+                      {
+                        "max_surge": "25%",
+                        "max_unavailable": "25%"
+                      }
+                    ],
+                    "type": "RollingUpdate"
+                  }
+                ],
+                "template": [
+                  {
+                    "metadata": [
+                      {
+                        "annotations": {},
+                        "generate_name": "",
+                        "generation": 0,
+                        "labels": {
+                          "app": "elasticsearch"
+                        },
+                        "name": "",
+                        "namespace": "",
+                        "resource_version": "",
+                        "uid": ""
+                      }
+                    ],
+                    "spec": [
+                      {
+                        "active_deadline_seconds": 0,
+                        "affinity": [],
+                        "automount_service_account_token": true,
+                        "container": [
+                          {
+                            "args": [],
+                            "command": [],
+                            "env": [
+                              {
+                                "name": "discovery.type",
+                                "value": "single-node",
+                                "value_from": []
+                              }
+                            ],
+                            "env_from": [],
+                            "image": "docker.elastic.co/elasticsearch/elasticsearch:8.16.1",
+                            "image_pull_policy": "IfNotPresent",
+                            "lifecycle": [],
+                            "liveness_probe": [],
+                            "name": "elasticsearch",
+                            "port": [
+                              {
+                                "container_port": 9200,
+                                "host_ip": "",
+                                "host_port": 0,
+                                "name": "",
+                                "protocol": "TCP"
+                              }
+                            ],
+                            "readiness_probe": [],
+                            "resources": [
+                              {
+                                "limits": {
+                                  "cpu": "2",
+                                  "memory": "4Gi"
+                                },
+                                "requests": {
+                                  "cpu": "1",
+                                  "memory": "2Gi"
+                                }
+                              }
+                            ],
+                            "security_context": [],
+                            "startup_probe": [],
+                            "stdin": false,
+                            "stdin_once": false,
+                            "termination_message_path": "/dev/termination-log",
+                            "termination_message_policy": "File",
+                            "tty": false,
+                            "volume_device": [],
+                            "volume_mount": [
+                              {
+                                "mount_path": "/usr/share/elasticsearch/config/elasticsearch.yml",
+                                "mount_propagation": "None",
+                                "name": "elasticsearch-config",
+                                "read_only": false,
+                                "sub_path": "elasticsearch.yml"
+                              }
+                            ],
+                            "working_dir": ""
+                          }
+                        ],
+                        "dns_config": [],
+                        "dns_policy": "ClusterFirst",
+                        "enable_service_links": true,
+                        "host_aliases": [],
+                        "host_ipc": false,
+                        "host_network": false,
+                        "host_pid": false,
+                        "hostname": "",
+                        "image_pull_secrets": [],
+                        "init_container": [],
+                        "node_name": "",
+                        "node_selector": {},
+                        "os": [],
+                        "priority_class_name": "",
+                        "readiness_gate": [],
+                        "restart_policy": "Always",
+                        "runtime_class_name": "",
+                        "scheduler_name": "default-scheduler",
+                        "security_context": [],
+                        "service_account_name": "",
+                        "share_process_namespace": false,
+                        "subdomain": "",
+                        "termination_grace_period_seconds": 30,
+                        "toleration": [],
+                        "topology_spread_constraint": [],
+                        "volume": [
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [
+                              {
+                                "default_mode": "0644",
+                                "items": [],
+                                "name": "elasticsearch-config",
+                                "optional": false
+                              }
+                            ],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "elasticsearch-config",
+                            "nfs": [],
+                            "persistent_volume_claim": [],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_rollout": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_config_map.elasticsearch_config"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_deployment",
+      "name": "elasticsearch2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/elasticsearch-alt",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 1,
+                "labels": {
+                  "app": "elasticsearch-alt"
+                },
+                "name": "elasticsearch-alt",
+                "namespace": "default",
+                "resource_version": "312734",
+                "uid": "1eee21aa-c4bc-44b5-866a-ad13365c016d"
+              }
+            ],
+            "spec": [
+              {
+                "min_ready_seconds": 0,
+                "paused": false,
+                "progress_deadline_seconds": 600,
+                "replicas": "1",
+                "revision_history_limit": 10,
+                "selector": [
+                  {
+                    "match_expressions": [],
+                    "match_labels": {
+                      "app": "elasticsearch-alt"
+                    }
+                  }
+                ],
+                "strategy": [
+                  {
+                    "rolling_update": [
+                      {
+                        "max_surge": "25%",
+                        "max_unavailable": "25%"
+                      }
+                    ],
+                    "type": "RollingUpdate"
+                  }
+                ],
+                "template": [
+                  {
+                    "metadata": [
+                      {
+                        "annotations": {},
+                        "generate_name": "",
+                        "generation": 0,
+                        "labels": {
+                          "app": "elasticsearch-alt"
+                        },
+                        "name": "",
+                        "namespace": "",
+                        "resource_version": "",
+                        "uid": ""
+                      }
+                    ],
+                    "spec": [
+                      {
+                        "active_deadline_seconds": 0,
+                        "affinity": [],
+                        "automount_service_account_token": true,
+                        "container": [
+                          {
+                            "args": [],
+                            "command": [],
+                            "env": [
+                              {
+                                "name": "discovery.type",
+                                "value": "single-node",
+                                "value_from": []
+                              }
+                            ],
+                            "env_from": [],
+                            "image": "docker.elastic.co/elasticsearch/elasticsearch:8.7.0",
+                            "image_pull_policy": "IfNotPresent",
+                            "lifecycle": [],
+                            "liveness_probe": [],
+                            "name": "elasticsearch",
+                            "port": [
+                              {
+                                "container_port": 9200,
+                                "host_ip": "",
+                                "host_port": 0,
+                                "name": "",
+                                "protocol": "TCP"
+                              }
+                            ],
+                            "readiness_probe": [],
+                            "resources": [
+                              {
+                                "limits": {},
+                                "requests": {}
+                              }
+                            ],
+                            "security_context": [],
+                            "startup_probe": [],
+                            "stdin": false,
+                            "stdin_once": false,
+                            "termination_message_path": "/dev/termination-log",
+                            "termination_message_policy": "File",
+                            "tty": false,
+                            "volume_device": [],
+                            "volume_mount": [
+                              {
+                                "mount_path": "/usr/share/elasticsearch/data",
+                                "mount_propagation": "None",
+                                "name": "elasticsearch-data",
+                                "read_only": false,
+                                "sub_path": ""
+                              },
+                              {
+                                "mount_path": "/usr/share/elasticsearch/logs",
+                                "mount_propagation": "None",
+                                "name": "elasticsearch-logs",
+                                "read_only": false,
+                                "sub_path": ""
+                              },
+                              {
+                                "mount_path": "/usr/share/elasticsearch/config/elasticsearch.yml",
+                                "mount_propagation": "None",
+                                "name": "elasticsearch-config",
+                                "read_only": false,
+                                "sub_path": "elasticsearch.yml"
+                              }
+                            ],
+                            "working_dir": ""
+                          }
+                        ],
+                        "dns_config": [],
+                        "dns_policy": "ClusterFirst",
+                        "enable_service_links": true,
+                        "host_aliases": [],
+                        "host_ipc": false,
+                        "host_network": false,
+                        "host_pid": false,
+                        "hostname": "",
+                        "image_pull_secrets": [],
+                        "init_container": [],
+                        "node_name": "",
+                        "node_selector": {},
+                        "os": [],
+                        "priority_class_name": "",
+                        "readiness_gate": [],
+                        "restart_policy": "Always",
+                        "runtime_class_name": "",
+                        "scheduler_name": "default-scheduler",
+                        "security_context": [],
+                        "service_account_name": "",
+                        "share_process_namespace": false,
+                        "subdomain": "",
+                        "termination_grace_period_seconds": 30,
+                        "toleration": [],
+                        "topology_spread_constraint": [],
+                        "volume": [
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "elasticsearch-data",
+                            "nfs": [],
+                            "persistent_volume_claim": [
+                              {
+                                "claim_name": "elk-data-pvc",
+                                "read_only": false
+                              }
+                            ],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          },
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "elasticsearch-logs",
+                            "nfs": [],
+                            "persistent_volume_claim": [
+                              {
+                                "claim_name": "elk-logs-pvc",
+                                "read_only": false
+                              }
+                            ],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          },
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [
+                              {
+                                "default_mode": "0644",
+                                "items": [],
+                                "name": "elasticsearch-config",
+                                "optional": false
+                              }
+                            ],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "elasticsearch-config",
+                            "nfs": [],
+                            "persistent_volume_claim": [],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_rollout": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_config_map.elasticsearch_config",
+            "kubernetes_persistent_volume_claim.elk_data_pvc",
+            "kubernetes_persistent_volume_claim.elk_logs_pvc",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_deployment",
+      "name": "kibana",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/kibana",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 1,
+                "labels": {
+                  "app": "kibana"
+                },
+                "name": "kibana",
+                "namespace": "default",
+                "resource_version": "312738",
+                "uid": "b794bc37-768a-4e7f-a962-7a7fefebaa75"
+              }
+            ],
+            "spec": [
+              {
+                "min_ready_seconds": 0,
+                "paused": false,
+                "progress_deadline_seconds": 600,
+                "replicas": "1",
+                "revision_history_limit": 10,
+                "selector": [
+                  {
+                    "match_expressions": [],
+                    "match_labels": {
+                      "app": "kibana"
+                    }
+                  }
+                ],
+                "strategy": [
+                  {
+                    "rolling_update": [
+                      {
+                        "max_surge": "25%",
+                        "max_unavailable": "25%"
+                      }
+                    ],
+                    "type": "RollingUpdate"
+                  }
+                ],
+                "template": [
+                  {
+                    "metadata": [
+                      {
+                        "annotations": {},
+                        "generate_name": "",
+                        "generation": 0,
+                        "labels": {
+                          "app": "kibana"
+                        },
+                        "name": "",
+                        "namespace": "",
+                        "resource_version": "",
+                        "uid": ""
+                      }
+                    ],
+                    "spec": [
+                      {
+                        "active_deadline_seconds": 0,
+                        "affinity": [],
+                        "automount_service_account_token": true,
+                        "container": [
+                          {
+                            "args": [],
+                            "command": [],
+                            "env": [
+                              {
+                                "name": "ELASTICSEARCH_URL",
+                                "value": "http://elasticsearch.default.svc.cluster.local:9200",
+                                "value_from": []
+                              },
+                              {
+                                "name": "xpack.security.enrollment.enabled",
+                                "value": "true",
+                                "value_from": []
+                              }
+                            ],
+                            "env_from": [],
+                            "image": "docker.elastic.co/kibana/kibana:8.16.1",
+                            "image_pull_policy": "IfNotPresent",
+                            "lifecycle": [],
+                            "liveness_probe": [],
+                            "name": "kibana",
+                            "port": [
+                              {
+                                "container_port": 5601,
+                                "host_ip": "",
+                                "host_port": 0,
+                                "name": "",
+                                "protocol": "TCP"
+                              }
+                            ],
+                            "readiness_probe": [],
+                            "resources": [
+                              {
+                                "limits": {
+                                  "cpu": "1",
+                                  "memory": "2Gi"
+                                },
+                                "requests": {
+                                  "cpu": "500m",
+                                  "memory": "1Gi"
+                                }
+                              }
+                            ],
+                            "security_context": [],
+                            "startup_probe": [],
+                            "stdin": false,
+                            "stdin_once": false,
+                            "termination_message_path": "/dev/termination-log",
+                            "termination_message_policy": "File",
+                            "tty": false,
+                            "volume_device": [],
+                            "volume_mount": [],
+                            "working_dir": ""
+                          }
+                        ],
+                        "dns_config": [],
+                        "dns_policy": "ClusterFirst",
+                        "enable_service_links": true,
+                        "host_aliases": [],
+                        "host_ipc": false,
+                        "host_network": false,
+                        "host_pid": false,
+                        "hostname": "",
+                        "image_pull_secrets": [],
+                        "init_container": [],
+                        "node_name": "",
+                        "node_selector": {},
+                        "os": [],
+                        "priority_class_name": "",
+                        "readiness_gate": [],
+                        "restart_policy": "Always",
+                        "runtime_class_name": "",
+                        "scheduler_name": "default-scheduler",
+                        "security_context": [],
+                        "service_account_name": "",
+                        "share_process_namespace": false,
+                        "subdomain": "",
+                        "termination_grace_period_seconds": 30,
+                        "toleration": [],
+                        "topology_spread_constraint": [],
+                        "volume": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_rollout": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_deployment",
+      "name": "kibana2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/kibana-alt",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 1,
+                "labels": {
+                  "app": "kibana-alt"
+                },
+                "name": "kibana-alt",
+                "namespace": "default",
+                "resource_version": "312705",
+                "uid": "011bf132-7adf-459a-9e76-52e62f68bd27"
+              }
+            ],
+            "spec": [
+              {
+                "min_ready_seconds": 0,
+                "paused": false,
+                "progress_deadline_seconds": 600,
+                "replicas": "1",
+                "revision_history_limit": 10,
+                "selector": [
+                  {
+                    "match_expressions": [],
+                    "match_labels": {
+                      "app": "kibana-alt"
+                    }
+                  }
+                ],
+                "strategy": [
+                  {
+                    "rolling_update": [
+                      {
+                        "max_surge": "25%",
+                        "max_unavailable": "25%"
+                      }
+                    ],
+                    "type": "RollingUpdate"
+                  }
+                ],
+                "template": [
+                  {
+                    "metadata": [
+                      {
+                        "annotations": {},
+                        "generate_name": "",
+                        "generation": 0,
+                        "labels": {
+                          "app": "kibana-alt"
+                        },
+                        "name": "",
+                        "namespace": "",
+                        "resource_version": "",
+                        "uid": ""
+                      }
+                    ],
+                    "spec": [
+                      {
+                        "active_deadline_seconds": 0,
+                        "affinity": [],
+                        "automount_service_account_token": true,
+                        "container": [
+                          {
+                            "args": [],
+                            "command": [],
+                            "env": [
+                              {
+                                "name": "ELASTICSEARCH_HOSTS",
+                                "value": "http://elasticsearch-alt:9200",
+                                "value_from": []
+                              }
+                            ],
+                            "env_from": [],
+                            "image": "docker.elastic.co/kibana/kibana:8.7.0",
+                            "image_pull_policy": "IfNotPresent",
+                            "lifecycle": [],
+                            "liveness_probe": [],
+                            "name": "kibana",
+                            "port": [
+                              {
+                                "container_port": 5601,
+                                "host_ip": "",
+                                "host_port": 0,
+                                "name": "",
+                                "protocol": "TCP"
+                              }
+                            ],
+                            "readiness_probe": [],
+                            "resources": [
+                              {
+                                "limits": {},
+                                "requests": {}
+                              }
+                            ],
+                            "security_context": [],
+                            "startup_probe": [],
+                            "stdin": false,
+                            "stdin_once": false,
+                            "termination_message_path": "/dev/termination-log",
+                            "termination_message_policy": "File",
+                            "tty": false,
+                            "volume_device": [],
+                            "volume_mount": [
+                              {
+                                "mount_path": "/usr/share/kibana/data",
+                                "mount_propagation": "None",
+                                "name": "kibana-data",
+                                "read_only": false,
+                                "sub_path": ""
+                              }
+                            ],
+                            "working_dir": ""
+                          }
+                        ],
+                        "dns_config": [],
+                        "dns_policy": "ClusterFirst",
+                        "enable_service_links": true,
+                        "host_aliases": [],
+                        "host_ipc": false,
+                        "host_network": false,
+                        "host_pid": false,
+                        "hostname": "",
+                        "image_pull_secrets": [],
+                        "init_container": [],
+                        "node_name": "",
+                        "node_selector": {},
+                        "os": [],
+                        "priority_class_name": "",
+                        "readiness_gate": [],
+                        "restart_policy": "Always",
+                        "runtime_class_name": "",
+                        "scheduler_name": "default-scheduler",
+                        "security_context": [],
+                        "service_account_name": "",
+                        "share_process_namespace": false,
+                        "subdomain": "",
+                        "termination_grace_period_seconds": 30,
+                        "toleration": [],
+                        "topology_spread_constraint": [],
+                        "volume": [
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "kibana-data",
+                            "nfs": [],
+                            "persistent_volume_claim": [
+                              {
+                                "claim_name": "elk-data-pvc",
+                                "read_only": false
+                              }
+                            ],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_rollout": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_persistent_volume_claim.elk_data_pvc",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_deployment",
+      "name": "logstash",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/logstash",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 1,
+                "labels": {
+                  "app": "logstash"
+                },
+                "name": "logstash",
+                "namespace": "default",
+                "resource_version": "312753",
+                "uid": "4c6fdaac-d8a7-42d4-b11c-2ad3bc8183fc"
+              }
+            ],
+            "spec": [
+              {
+                "min_ready_seconds": 0,
+                "paused": false,
+                "progress_deadline_seconds": 600,
+                "replicas": "1",
+                "revision_history_limit": 10,
+                "selector": [
+                  {
+                    "match_expressions": [],
+                    "match_labels": {
+                      "app": "logstash"
+                    }
+                  }
+                ],
+                "strategy": [
+                  {
+                    "rolling_update": [
+                      {
+                        "max_surge": "25%",
+                        "max_unavailable": "25%"
+                      }
+                    ],
+                    "type": "RollingUpdate"
+                  }
+                ],
+                "template": [
+                  {
+                    "metadata": [
+                      {
+                        "annotations": {},
+                        "generate_name": "",
+                        "generation": 0,
+                        "labels": {
+                          "app": "logstash"
+                        },
+                        "name": "",
+                        "namespace": "",
+                        "resource_version": "",
+                        "uid": ""
+                      }
+                    ],
+                    "spec": [
+                      {
+                        "active_deadline_seconds": 0,
+                        "affinity": [],
+                        "automount_service_account_token": true,
+                        "container": [
+                          {
+                            "args": [],
+                            "command": [],
+                            "env": [],
+                            "env_from": [],
+                            "image": "docker.elastic.co/logstash/logstash:8.16.1",
+                            "image_pull_policy": "IfNotPresent",
+                            "lifecycle": [],
+                            "liveness_probe": [],
+                            "name": "logstash",
+                            "port": [
+                              {
+                                "container_port": 5044,
+                                "host_ip": "",
+                                "host_port": 0,
+                                "name": "",
+                                "protocol": "TCP"
+                              }
+                            ],
+                            "readiness_probe": [],
+                            "resources": [
+                              {
+                                "limits": {
+                                  "cpu": "1",
+                                  "memory": "2Gi"
+                                },
+                                "requests": {
+                                  "cpu": "500m",
+                                  "memory": "1Gi"
+                                }
+                              }
+                            ],
+                            "security_context": [],
+                            "startup_probe": [],
+                            "stdin": false,
+                            "stdin_once": false,
+                            "termination_message_path": "/dev/termination-log",
+                            "termination_message_policy": "File",
+                            "tty": false,
+                            "volume_device": [],
+                            "volume_mount": [
+                              {
+                                "mount_path": "/usr/share/logstash/config/logstash.yml",
+                                "mount_propagation": "None",
+                                "name": "logstash-config",
+                                "read_only": false,
+                                "sub_path": "logstash.yml"
+                              },
+                              {
+                                "mount_path": "/usr/share/logstash/pipeline/logstash.conf",
+                                "mount_propagation": "None",
+                                "name": "logstash-pipeline",
+                                "read_only": false,
+                                "sub_path": "logstash.conf"
+                              }
+                            ],
+                            "working_dir": ""
+                          }
+                        ],
+                        "dns_config": [],
+                        "dns_policy": "ClusterFirst",
+                        "enable_service_links": true,
+                        "host_aliases": [],
+                        "host_ipc": false,
+                        "host_network": false,
+                        "host_pid": false,
+                        "hostname": "",
+                        "image_pull_secrets": [],
+                        "init_container": [],
+                        "node_name": "",
+                        "node_selector": {},
+                        "os": [],
+                        "priority_class_name": "",
+                        "readiness_gate": [],
+                        "restart_policy": "Always",
+                        "runtime_class_name": "",
+                        "scheduler_name": "default-scheduler",
+                        "security_context": [],
+                        "service_account_name": "",
+                        "share_process_namespace": false,
+                        "subdomain": "",
+                        "termination_grace_period_seconds": 30,
+                        "toleration": [],
+                        "topology_spread_constraint": [],
+                        "volume": [
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [
+                              {
+                                "default_mode": "0644",
+                                "items": [],
+                                "name": "logstash-config",
+                                "optional": false
+                              }
+                            ],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "logstash-config",
+                            "nfs": [],
+                            "persistent_volume_claim": [],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          },
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [
+                              {
+                                "default_mode": "0644",
+                                "items": [],
+                                "name": "logstash-pipeline-config",
+                                "optional": false
+                              }
+                            ],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "logstash-pipeline",
+                            "nfs": [],
+                            "persistent_volume_claim": [],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_rollout": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_config_map.logstash_config",
+            "kubernetes_config_map.logstash_config2",
+            "kubernetes_persistent_volume_claim.elk_pvc",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_deployment",
+      "name": "logstash2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/logstash-alt",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 1,
+                "labels": {
+                  "app": "logstash-alt"
+                },
+                "name": "logstash-alt",
+                "namespace": "default",
+                "resource_version": "312752",
+                "uid": "cafa2438-43f0-4dbd-8406-3355bb55abc6"
+              }
+            ],
+            "spec": [
+              {
+                "min_ready_seconds": 0,
+                "paused": false,
+                "progress_deadline_seconds": 600,
+                "replicas": "1",
+                "revision_history_limit": 10,
+                "selector": [
+                  {
+                    "match_expressions": [],
+                    "match_labels": {
+                      "app": "logstash-alt"
+                    }
+                  }
+                ],
+                "strategy": [
+                  {
+                    "rolling_update": [
+                      {
+                        "max_surge": "25%",
+                        "max_unavailable": "25%"
+                      }
+                    ],
+                    "type": "RollingUpdate"
+                  }
+                ],
+                "template": [
+                  {
+                    "metadata": [
+                      {
+                        "annotations": {},
+                        "generate_name": "",
+                        "generation": 0,
+                        "labels": {
+                          "app": "logstash-alt"
+                        },
+                        "name": "",
+                        "namespace": "",
+                        "resource_version": "",
+                        "uid": ""
+                      }
+                    ],
+                    "spec": [
+                      {
+                        "active_deadline_seconds": 0,
+                        "affinity": [],
+                        "automount_service_account_token": true,
+                        "container": [
+                          {
+                            "args": [],
+                            "command": [],
+                            "env": [],
+                            "env_from": [],
+                            "image": "docker.elastic.co/logstash/logstash:8.7.0",
+                            "image_pull_policy": "IfNotPresent",
+                            "lifecycle": [],
+                            "liveness_probe": [],
+                            "name": "logstash",
+                            "port": [
+                              {
+                                "container_port": 5044,
+                                "host_ip": "",
+                                "host_port": 0,
+                                "name": "",
+                                "protocol": "TCP"
+                              }
+                            ],
+                            "readiness_probe": [],
+                            "resources": [
+                              {
+                                "limits": {},
+                                "requests": {}
+                              }
+                            ],
+                            "security_context": [],
+                            "startup_probe": [],
+                            "stdin": false,
+                            "stdin_once": false,
+                            "termination_message_path": "/dev/termination-log",
+                            "termination_message_policy": "File",
+                            "tty": false,
+                            "volume_device": [],
+                            "volume_mount": [
+                              {
+                                "mount_path": "/usr/share/logstash/pipeline",
+                                "mount_propagation": "None",
+                                "name": "logstash-pipeline",
+                                "read_only": false,
+                                "sub_path": ""
+                              },
+                              {
+                                "mount_path": "/usr/share/logstash/data",
+                                "mount_propagation": "None",
+                                "name": "logstash-data",
+                                "read_only": false,
+                                "sub_path": ""
+                              },
+                              {
+                                "mount_path": "/usr/share/logstash/logs",
+                                "mount_propagation": "None",
+                                "name": "logstash-logs",
+                                "read_only": false,
+                                "sub_path": ""
+                              },
+                              {
+                                "mount_path": "/usr/share/logstash/config/logstash.yml",
+                                "mount_propagation": "None",
+                                "name": "logstash-config",
+                                "read_only": false,
+                                "sub_path": "logstash.yml"
+                              },
+                              {
+                                "mount_path": "/usr/share/logstash/config/pipelines.yml",
+                                "mount_propagation": "None",
+                                "name": "logstash-pipelines",
+                                "read_only": false,
+                                "sub_path": "pipelines.yml"
+                              }
+                            ],
+                            "working_dir": ""
+                          }
+                        ],
+                        "dns_config": [],
+                        "dns_policy": "ClusterFirst",
+                        "enable_service_links": true,
+                        "host_aliases": [],
+                        "host_ipc": false,
+                        "host_network": false,
+                        "host_pid": false,
+                        "hostname": "",
+                        "image_pull_secrets": [],
+                        "init_container": [],
+                        "node_name": "",
+                        "node_selector": {},
+                        "os": [],
+                        "priority_class_name": "",
+                        "readiness_gate": [],
+                        "restart_policy": "Always",
+                        "runtime_class_name": "",
+                        "scheduler_name": "default-scheduler",
+                        "security_context": [],
+                        "service_account_name": "",
+                        "share_process_namespace": false,
+                        "subdomain": "",
+                        "termination_grace_period_seconds": 30,
+                        "toleration": [],
+                        "topology_spread_constraint": [],
+                        "volume": [
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [
+                              {
+                                "default_mode": "0644",
+                                "items": [],
+                                "name": "logstash-pipeline-config",
+                                "optional": false
+                              }
+                            ],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "logstash-pipeline",
+                            "nfs": [],
+                            "persistent_volume_claim": [],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          },
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "logstash-data",
+                            "nfs": [],
+                            "persistent_volume_claim": [
+                              {
+                                "claim_name": "elk-data-pvc",
+                                "read_only": false
+                              }
+                            ],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          },
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "logstash-logs",
+                            "nfs": [],
+                            "persistent_volume_claim": [
+                              {
+                                "claim_name": "elk-logs-pvc",
+                                "read_only": false
+                              }
+                            ],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          },
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [
+                              {
+                                "default_mode": "0644",
+                                "items": [],
+                                "name": "logstash-config",
+                                "optional": false
+                              }
+                            ],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "logstash-config",
+                            "nfs": [],
+                            "persistent_volume_claim": [],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          },
+                          {
+                            "aws_elastic_block_store": [],
+                            "azure_disk": [],
+                            "azure_file": [],
+                            "ceph_fs": [],
+                            "cinder": [],
+                            "config_map": [
+                              {
+                                "default_mode": "0644",
+                                "items": [],
+                                "name": "logstash-pipelines",
+                                "optional": false
+                              }
+                            ],
+                            "csi": [],
+                            "downward_api": [],
+                            "empty_dir": [],
+                            "ephemeral": [],
+                            "fc": [],
+                            "flex_volume": [],
+                            "flocker": [],
+                            "gce_persistent_disk": [],
+                            "git_repo": [],
+                            "glusterfs": [],
+                            "host_path": [],
+                            "iscsi": [],
+                            "local": [],
+                            "name": "logstash-pipelines",
+                            "nfs": [],
+                            "persistent_volume_claim": [],
+                            "photon_persistent_disk": [],
+                            "projected": [],
+                            "quobyte": [],
+                            "rbd": [],
+                            "secret": [],
+                            "vsphere_volume": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_rollout": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_config_map.logstash_config",
+            "kubernetes_config_map.logstash_config2",
+            "kubernetes_config_map.logstash_pipelines",
+            "kubernetes_persistent_volume_claim.elk_data_pvc",
+            "kubernetes_persistent_volume_claim.elk_logs_pvc",
+            "kubernetes_persistent_volume_claim.elk_pvc",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_persistent_volume_claim",
+      "name": "elk_data_pvc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "default/elk-data-pvc",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "elk-data-pvc",
+                "namespace": "default",
+                "resource_version": "1561",
+                "uid": "67ba53d5-f12c-43c3-9816-a08a507a219b"
+              }
+            ],
+            "spec": [
+              {
+                "access_modes": [
+                  "ReadWriteOnce"
+                ],
+                "resources": [
+                  {
+                    "limits": {},
+                    "requests": {
+                      "storage": "10Gi"
+                    }
+                  }
+                ],
+                "selector": [],
+                "storage_class_name": "azurefile-csi",
+                "volume_mode": "Filesystem",
+                "volume_name": "pvc-67ba53d5-f12c-43c3-9816-a08a507a219b"
+              }
+            ],
+            "timeouts": null,
+            "wait_until_bound": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_persistent_volume_claim",
+      "name": "elk_logs_pvc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "default/elk-logs-pvc",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "elk-logs-pvc",
+                "namespace": "default",
+                "resource_version": "1566",
+                "uid": "b409c00c-5a21-4815-998d-0db2d43eb041"
+              }
+            ],
+            "spec": [
+              {
+                "access_modes": [
+                  "ReadWriteOnce"
+                ],
+                "resources": [
+                  {
+                    "limits": {},
+                    "requests": {
+                      "storage": "5Gi"
+                    }
+                  }
+                ],
+                "selector": [],
+                "storage_class_name": "azurefile-csi",
+                "volume_mode": "Filesystem",
+                "volume_name": "pvc-b409c00c-5a21-4815-998d-0db2d43eb041"
+              }
+            ],
+            "timeouts": null,
+            "wait_until_bound": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_persistent_volume_claim",
+      "name": "elk_pvc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "default/elk-pvc",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "elk-pvc",
+                "namespace": "default",
+                "resource_version": "1554",
+                "uid": "fc3caa26-ae16-4439-aa66-c7e7629a5a88"
+              }
+            ],
+            "spec": [
+              {
+                "access_modes": [
+                  "ReadWriteOnce"
+                ],
+                "resources": [
+                  {
+                    "limits": {},
+                    "requests": {
+                      "storage": "5Gi"
+                    }
+                  }
+                ],
+                "selector": [],
+                "storage_class_name": "azurefile-csi",
+                "volume_mode": "Filesystem",
+                "volume_name": "pvc-fc3caa26-ae16-4439-aa66-c7e7629a5a88"
+              }
+            ],
+            "timeouts": null,
+            "wait_until_bound": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_service",
+      "name": "elasticsearch",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/elasticsearch",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "elasticsearch",
+                "namespace": "default",
+                "resource_version": "91156",
+                "uid": "0517223d-97c2-4d6a-9b6f-346f5e869539"
+              }
+            ],
+            "spec": [
+              {
+                "allocate_load_balancer_node_ports": true,
+                "cluster_ip": "10.0.250.40",
+                "cluster_ips": [
+                  "10.0.250.40"
+                ],
+                "external_ips": [],
+                "external_name": "",
+                "external_traffic_policy": "Cluster",
+                "health_check_node_port": 0,
+                "internal_traffic_policy": "Cluster",
+                "ip_families": [
+                  "IPv4"
+                ],
+                "ip_family_policy": "SingleStack",
+                "load_balancer_class": "",
+                "load_balancer_ip": "",
+                "load_balancer_source_ranges": [],
+                "port": [
+                  {
+                    "app_protocol": "",
+                    "name": "",
+                    "node_port": 31168,
+                    "port": 9200,
+                    "protocol": "TCP",
+                    "target_port": "9200"
+                  }
+                ],
+                "publish_not_ready_addresses": false,
+                "selector": {
+                  "app": "elasticsearch"
+                },
+                "session_affinity": "None",
+                "session_affinity_config": [],
+                "type": "LoadBalancer"
+              }
+            ],
+            "status": [
+              {
+                "load_balancer": [
+                  {
+                    "ingress": [
+                      {
+                        "hostname": "",
+                        "ip": "50.85.52.240"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_load_balancer": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_service",
+      "name": "elasticsearch_alt",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/elasticsearch-alt",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "elasticsearch-alt",
+                "namespace": "default",
+                "resource_version": "90894",
+                "uid": "99c144b9-fdfd-452c-a765-88ca18e4f192"
+              }
+            ],
+            "spec": [
+              {
+                "allocate_load_balancer_node_ports": true,
+                "cluster_ip": "10.0.131.251",
+                "cluster_ips": [
+                  "10.0.131.251"
+                ],
+                "external_ips": [],
+                "external_name": "",
+                "external_traffic_policy": "",
+                "health_check_node_port": 0,
+                "internal_traffic_policy": "Cluster",
+                "ip_families": [
+                  "IPv4"
+                ],
+                "ip_family_policy": "SingleStack",
+                "load_balancer_class": "",
+                "load_balancer_ip": "",
+                "load_balancer_source_ranges": [],
+                "port": [
+                  {
+                    "app_protocol": "",
+                    "name": "",
+                    "node_port": 0,
+                    "port": 9200,
+                    "protocol": "TCP",
+                    "target_port": "9200"
+                  }
+                ],
+                "publish_not_ready_addresses": false,
+                "selector": {
+                  "app": "elasticsearch-alt"
+                },
+                "session_affinity": "None",
+                "session_affinity_config": [],
+                "type": "ClusterIP"
+              }
+            ],
+            "status": [
+              {
+                "load_balancer": [
+                  {
+                    "ingress": []
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_load_balancer": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_persistent_volume_claim.elk_pvc",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_service",
+      "name": "kibana",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/kibana",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "kibana",
+                "namespace": "default",
+                "resource_version": "91024",
+                "uid": "e9f951bd-4a79-4929-95ef-61b8868cd445"
+              }
+            ],
+            "spec": [
+              {
+                "allocate_load_balancer_node_ports": true,
+                "cluster_ip": "10.0.77.21",
+                "cluster_ips": [
+                  "10.0.77.21"
+                ],
+                "external_ips": [],
+                "external_name": "",
+                "external_traffic_policy": "Cluster",
+                "health_check_node_port": 0,
+                "internal_traffic_policy": "Cluster",
+                "ip_families": [
+                  "IPv4"
+                ],
+                "ip_family_policy": "SingleStack",
+                "load_balancer_class": "",
+                "load_balancer_ip": "",
+                "load_balancer_source_ranges": [],
+                "port": [
+                  {
+                    "app_protocol": "",
+                    "name": "",
+                    "node_port": 31867,
+                    "port": 5601,
+                    "protocol": "TCP",
+                    "target_port": "5601"
+                  }
+                ],
+                "publish_not_ready_addresses": false,
+                "selector": {
+                  "app": "kibana"
+                },
+                "session_affinity": "None",
+                "session_affinity_config": [],
+                "type": "LoadBalancer"
+              }
+            ],
+            "status": [
+              {
+                "load_balancer": [
+                  {
+                    "ingress": [
+                      {
+                        "hostname": "",
+                        "ip": "50.85.71.117"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_load_balancer": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_service",
+      "name": "kibana_alt",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/kibana-alt",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "kibana-alt",
+                "namespace": "default",
+                "resource_version": "90840",
+                "uid": "e6b0141a-31de-4d96-ac6b-ac72017636a1"
+              }
+            ],
+            "spec": [
+              {
+                "allocate_load_balancer_node_ports": true,
+                "cluster_ip": "10.0.133.110",
+                "cluster_ips": [
+                  "10.0.133.110"
+                ],
+                "external_ips": [],
+                "external_name": "",
+                "external_traffic_policy": "",
+                "health_check_node_port": 0,
+                "internal_traffic_policy": "Cluster",
+                "ip_families": [
+                  "IPv4"
+                ],
+                "ip_family_policy": "SingleStack",
+                "load_balancer_class": "",
+                "load_balancer_ip": "",
+                "load_balancer_source_ranges": [],
+                "port": [
+                  {
+                    "app_protocol": "",
+                    "name": "",
+                    "node_port": 0,
+                    "port": 5601,
+                    "protocol": "TCP",
+                    "target_port": "5601"
+                  }
+                ],
+                "publish_not_ready_addresses": false,
+                "selector": {
+                  "app": "kibana-alt"
+                },
+                "session_affinity": "None",
+                "session_affinity_config": [],
+                "type": "ClusterIP"
+              }
+            ],
+            "status": [
+              {
+                "load_balancer": [
+                  {
+                    "ingress": []
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_load_balancer": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_persistent_volume_claim.elk_pvc",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_service",
+      "name": "logstash",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/logstash",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "logstash",
+                "namespace": "default",
+                "resource_version": "91098",
+                "uid": "01d4ddde-e1f6-49e0-8700-527677580c1a"
+              }
+            ],
+            "spec": [
+              {
+                "allocate_load_balancer_node_ports": true,
+                "cluster_ip": "10.0.57.198",
+                "cluster_ips": [
+                  "10.0.57.198"
+                ],
+                "external_ips": [],
+                "external_name": "",
+                "external_traffic_policy": "Cluster",
+                "health_check_node_port": 0,
+                "internal_traffic_policy": "Cluster",
+                "ip_families": [
+                  "IPv4"
+                ],
+                "ip_family_policy": "SingleStack",
+                "load_balancer_class": "",
+                "load_balancer_ip": "",
+                "load_balancer_source_ranges": [],
+                "port": [
+                  {
+                    "app_protocol": "",
+                    "name": "api",
+                    "node_port": 30211,
+                    "port": 9600,
+                    "protocol": "TCP",
+                    "target_port": "9600"
+                  },
+                  {
+                    "app_protocol": "",
+                    "name": "beats",
+                    "node_port": 32338,
+                    "port": 5044,
+                    "protocol": "TCP",
+                    "target_port": "5044"
+                  }
+                ],
+                "publish_not_ready_addresses": false,
+                "selector": {
+                  "app": "logstash"
+                },
+                "session_affinity": "None",
+                "session_affinity_config": [],
+                "type": "LoadBalancer"
+              }
+            ],
+            "status": [
+              {
+                "load_balancer": [
+                  {
+                    "ingress": [
+                      {
+                        "hostname": "",
+                        "ip": "132.164.127.10"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_load_balancer": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "kubernetes_service",
+      "name": "logstash_alt",
+      "provider": "provider[\"registry.terraform.io/hashicorp/kubernetes\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "id": "default/logstash-alt",
+            "metadata": [
+              {
+                "annotations": {},
+                "generate_name": "",
+                "generation": 0,
+                "labels": {},
+                "name": "logstash-alt",
+                "namespace": "default",
+                "resource_version": "90848",
+                "uid": "3b9e7601-fbce-4a26-922f-614cd28bf0aa"
+              }
+            ],
+            "spec": [
+              {
+                "allocate_load_balancer_node_ports": true,
+                "cluster_ip": "10.0.21.88",
+                "cluster_ips": [
+                  "10.0.21.88"
+                ],
+                "external_ips": [],
+                "external_name": "",
+                "external_traffic_policy": "",
+                "health_check_node_port": 0,
+                "internal_traffic_policy": "Cluster",
+                "ip_families": [
+                  "IPv4"
+                ],
+                "ip_family_policy": "SingleStack",
+                "load_balancer_class": "",
+                "load_balancer_ip": "",
+                "load_balancer_source_ranges": [],
+                "port": [
+                  {
+                    "app_protocol": "",
+                    "name": "",
+                    "node_port": 0,
+                    "port": 5044,
+                    "protocol": "TCP",
+                    "target_port": "5044"
+                  }
+                ],
+                "publish_not_ready_addresses": false,
+                "selector": {
+                  "app": "logstash-alt"
+                },
+                "session_affinity": "None",
+                "session_affinity_config": [],
+                "type": "ClusterIP"
+              }
+            ],
+            "status": [
+              {
+                "load_balancer": [
+                  {
+                    "ingress": []
+                  }
+                ]
+              }
+            ],
+            "timeouts": null,
+            "wait_for_load_balancer": true
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_persistent_volume_claim.elk_pvc",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "aks_get_credentials",
+      "provider": "provider[\"registry.terraform.io/hashicorp/null\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "338815330",
+            "triggers": null
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_resource_group.main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "set_subscription",
+      "provider": "provider[\"registry.terraform.io/hashicorp/null\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "2088678894",
+            "triggers": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "wait_for_elasticsearch_pod",
+      "provider": "provider[\"registry.terraform.io/hashicorp/null\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "829416758",
+            "triggers": null
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_config_map.elasticsearch_config",
+            "kubernetes_deployment.elasticsearch2",
+            "kubernetes_persistent_volume_claim.elk_data_pvc",
+            "kubernetes_persistent_volume_claim.elk_logs_pvc",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "wait_for_kibana_pod",
+      "provider": "provider[\"registry.terraform.io/hashicorp/null\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "314967868",
+            "triggers": null
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "azurerm_kubernetes_cluster.aks",
+            "data.azurerm_kubernetes_cluster.aks_data",
+            "data.azurerm_resource_group.main",
+            "kubernetes_deployment.kibana2",
+            "kubernetes_persistent_volume_claim.elk_data_pvc",
+            "null_resource.aks_get_credentials"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

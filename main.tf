@@ -25,7 +25,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
 
   default_node_pool {
   name                = "default"
-  vm_size             = "Standard_DS3_v2"
+  vm_size             = "Standard_D4_v2"
   os_disk_size_gb     = 50
   type                = "VirtualMachineScaleSets"
   auto_scaling_enabled = true
@@ -470,19 +470,25 @@ resource "kubernetes_config_map" "logstash_config2" {
 
   data = {
     "logstash.conf" = <<-EOT
-      input {
-        beats {
-          port => 5044
-        }
-      }
+  input {
+  beats {
+    port => 5044
+  }
 
-      output {
-        stdout { codec => rubydebug }
-        elasticsearch {
-          hosts => ["http://elasticsearch:9200"]
-          index => "logstash-%%{+YYYY.MM.dd}"
-        }
-      }
+  syslog {
+    port => 514
+    id => "syslog"
+  }
+}
+
+output {
+  stdout { codec => rubydebug }
+
+  elasticsearch {
+    hosts => ["http://elasticsearch:9200"]
+    index => "logstash-%%{+YYYY.MM.dd}"
+  }
+}
     EOT
   }
 }
@@ -800,6 +806,14 @@ resource "kubernetes_service" "logstash" {
       name        = "beats"
       port        = 5044
       target_port = 5044
+
+    }
+
+    port {
+      name        = "syslog"
+      port        = 514
+      target_port = 514
+      protocol    = "TCP"
 
     }
   }
