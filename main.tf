@@ -4,6 +4,10 @@ terraform {
       source  = "hashicorp/azurerm"
       version = ">= 4.0.0"
     }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = ">= 2.0.0"
+    }
   }
 }
 
@@ -23,13 +27,13 @@ resource "azurerm_kubernetes_cluster" "aks" {
   dns_prefix          = "myaksdns"
 
   default_node_pool {
-  name                = "default"
-  vm_size             = "Standard_D4_v2"
-  os_disk_size_gb     = 50
-  type                = "VirtualMachineScaleSets"
-  auto_scaling_enabled = true
-  min_count           = 1
-  max_count           = 15
+    name                = "default"
+    vm_size             = "Standard_D4_v2"
+    os_disk_size_gb     = 50
+    type                = "VirtualMachineScaleSets"
+    auto_scaling_enabled = true
+    min_count           = 1
+    max_count           = 15
   }
 
   identity {
@@ -46,7 +50,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
   tags = {
     Environment = "dev"
   }
-  
 }
 
 data "azurerm_kubernetes_cluster" "aks_data" {
@@ -325,7 +328,7 @@ resource "azurerm_subnet_network_security_group_association" "aks_subnet_nsg_ass
 
 # providers
 provider "kubernetes" {
-  config_path = "C:\\Users\\luukr\\.kube\\config" #your kube config (usually: C:\\users\\name\\.kube\\config)
+  config_path = "C:\\Users\\SD\\.kube\\config"
   host                   = data.azurerm_kubernetes_cluster.aks_data.kube_config[0].host
   client_certificate     = base64decode(data.azurerm_kubernetes_cluster.aks_data.kube_config[0].client_certificate)
   client_key             = base64decode(data.azurerm_kubernetes_cluster.aks_data.kube_config[0].client_key)
@@ -467,30 +470,26 @@ resource "kubernetes_config_map" "logstash_config2" {
     name = "logstash-pipeline-config"
   }
 
-  data = {
-    "logstash.conf" = <<-EOT
-  input {
-  beats {
-    port => 5044
-  }
-
-  syslog {
-    port => 514
-    id => "syslog"
+ data = {
+  "logstash.conf" = <<EOT
+input {
+  tcp {
+    port => 5514
+    codec => line
   }
 }
 
 output {
   stdout { codec => rubydebug }
-
   elasticsearch {
     hosts => ["http://elasticsearch:9200"]
-    index => "logstash-%%{+YYYY.MM.dd}"
+    index => "syslog-%%{+YYYY.MM.dd}"
   }
 }
-    EOT
-  }
+EOT
 }
+}
+
 #================================================================================================================================================#
 resource "kubernetes_config_map" "elasticsearch_config" {
   metadata {
@@ -696,6 +695,7 @@ resource "kubernetes_deployment" "logstash" {
         container {
           name  = "logstash"
           image = "docker.elastic.co/logstash/logstash:8.16.1"
+          command = ["/usr/share/logstash/bin/logstash", "-f", "/usr/share/logstash/pipeline/logstash.conf"]
 
           port { container_port = 5044 }
 
@@ -810,8 +810,8 @@ resource "kubernetes_service" "logstash" {
 
     port {
       name        = "syslog"
-      port        = 514
-      target_port = 514
+      port        = 5514
+      target_port = 5514
       protocol    = "TCP"
 
     }
@@ -1083,11 +1083,106 @@ resource "kubernetes_service" "logstash_alt" {
   }
 }
 
-# public IP keycloak
+# Add Syslog Server Resources
+resource "azurerm_public_ip" "syslog_public_ip" {
+  name                = "syslog-public-ip"
+  location            = data.azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+  allocation_method   = "Static"
+  sku                 = "Standard"
+}
 
+resource "azurerm_network_interface" "syslog_nic" {
+  name                = "syslog-nic"
+  location            = data.azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.aks_subnet.id
+    private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = azurerm_public_ip.syslog_public_ip.id
+  }
+}
+
+# Generate SSH Key for Syslog Server
+resource "tls_private_key" "syslog_vm_key" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
+
+resource "local_file" "syslog_vm_private_key" {
+  filename        = "./ssh/syslog_vm_id_rsa"
+  content         = tls_private_key.syslog_vm_key.private_key_pem
+  file_permission = "0600"
+}
+
+resource "local_file" "syslog_vm_public_key" {
+  filename        = "./ssh/syslog_vm_id_rsa.pub"
+  content         = tls_private_key.syslog_vm_key.public_key_openssh
+}
+
+resource "azurerm_linux_virtual_machine" "syslog_server" {
+  name                = "syslog-server"
+  location            = data.azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+  size                = "Standard_B1s"
+  admin_username      = "azureuser"
+  network_interface_ids = [
+    azurerm_network_interface.syslog_nic.id
+  ]
+
+  admin_ssh_key {
+    username   = "azureuser"
+    public_key = tls_private_key.syslog_vm_key.public_key_openssh
+  }
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts-gen2"
+    version   = "latest"
+  }
+
+  custom_data = base64encode(<<-EOT
+    #!/bin/bash
+    
+    # Update system
+    apt-get update
+    apt-get upgrade -y
+    
+    # Install rsyslog
+    apt-get install -y rsyslog
+    
+    # Configure rsyslog to forward logs to Logstash (now on port 5514)
+    cat > /etc/rsyslog.d/30-logstash.conf << 'EOF'
+    *.* @@logstash.default.svc.cluster.local:5514
+    EOF
+    
+    # Restart rsyslog service
+    systemctl restart rsyslog
+    
+    # Generate some test logs
+    echo "Test log message from syslog server" | logger
+    
+    # Install monitoring tools
+    apt-get install -y htop iotop
+    
+    # Configure system to generate regular logs
+    echo "*/5 * * * * root echo 'Regular system check log' | logger" > /etc/cron.d/system-logs
+  EOT
+  )
+}
+
+# Add Keycloak Resources
 resource "azurerm_public_ip" "Keycloak_public_ip" {
   name                = "keycloak-public-ip"
-  location = data.azurerm_resource_group.main.location
+  location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
   allocation_method   = "Static"
   sku                 = "Standard"
@@ -1096,7 +1191,7 @@ resource "azurerm_public_ip" "Keycloak_public_ip" {
 # Keycloak NIC
 resource "azurerm_network_interface" "NIC-keycloak" {
   name                = "keycloak-nic"
-  location = data.azurerm_resource_group.main.location
+  location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
 
   ip_configuration {
@@ -1107,11 +1202,10 @@ resource "azurerm_network_interface" "NIC-keycloak" {
   }
 }
 
-
-# Keycloak
+# Keycloak VM
 resource "azurerm_linux_virtual_machine" "keycloak" {
   name                = "keycloak"
-  location = data.azurerm_resource_group.main.location
+  location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
   size                = "Standard_D2s_v3"
   admin_username      = var.admin_username_keycloak
