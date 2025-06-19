@@ -473,6 +473,10 @@ resource "kubernetes_config_map" "logstash_config2" {
  data = {
   "logstash.conf" = <<EOT
 input {
+  beats {
+    port => 5044
+  }
+
   tcp {
     port => 5514
     codec => line
