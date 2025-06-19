@@ -328,7 +328,7 @@ resource "azurerm_subnet_network_security_group_association" "aks_subnet_nsg_ass
 
 # providers
 provider "kubernetes" {
-  config_path = "C:\\Users\\SD\\.kube\\config"
+  config_path = "C:\\Users\\maxim\\.kube\\config"
   host                   = data.azurerm_kubernetes_cluster.aks_data.kube_config[0].host
   client_certificate     = base64decode(data.azurerm_kubernetes_cluster.aks_data.kube_config[0].client_certificate)
   client_key             = base64decode(data.azurerm_kubernetes_cluster.aks_data.kube_config[0].client_key)
@@ -463,37 +463,97 @@ resource "kubernetes_persistent_volume_claim" "elk_logs_pvc" {
   ]
 }
 
-# deploying the persitent volumes
+# Deploying the persistent volumes
 resource "kubernetes_config_map" "logstash_config2" {
-  depends_on = [kubernetes_persistent_volume_claim.elk_pvc]
+  depends_on = [
+    kubernetes_persistent_volume_claim.elk_pvc,
+  ]
+
   metadata {
     name = "logstash-pipeline-config"
   }
 
- data = {
-  "logstash.conf" = <<EOT
-input {
-  beats {
-    port => 5044
-  }
+  data = {
+    "logstash.conf" = <<-EOT
+      input {
+        beats {
+          port => 5044
+        }
 
-  tcp {
-    port => 5514
-    codec => line
+        syslog {
+          port  => 5514
+          codec => line
+        }
+      }
+
+      filter {
+        # Als JSON → parse als JSON
+        if [message] =~ "^{.*}$" {
+          json {
+            source       => "message"
+            target       => "parsed_json"
+            remove_field => ["message"]
+          }
+
+          mutate {
+            add_field => {
+              "log_level" => "%%{[parsed_json][log][level]}"
+              "service"   => "%%{[parsed_json][service][name]}"
+            }
+          }
+        
+        # Als key=value logs zoals bij Keycloak of andere apps
+        } else if [message] =~ "type=" {
+          kv {
+            source      => "message"
+            field_split => ", "
+            value_split => "="
+            trim_value  => "\""
+          }
+
+          # Zet type/realm/error in gestandaardiseerde velden:
+          if [type] {
+            mutate { rename => { "type" => "event_type" } }
+          }
+          
+          if [realmId] or [realmName] {
+            mutate { rename => { "realmId" => "realm" } }
+            mutate { rename => { "realmName" => "realm" } }
+          }
+          
+          if [error] {
+            mutate { rename => { "error" => "error_message" } }
+          }
+        
+        # Anders: zet raw log in veld
+        } else {
+          mutate {
+            add_field    => { "raw_message" => "%%{message}" }
+            remove_field => ["message"]
+          }
+        }
+
+        # Voeg applicatienaam toe vanuit Filebeat
+        if [fields][app] {
+          mutate {
+            add_field => { "app" => "%%{[fields][app]}" }
+          }
+        }
+      }
+
+      output {
+        stdout {
+          codec => rubydebug
+        }
+
+        elasticsearch {
+          hosts => ["http://elasticsearch:9200"]
+          index => "logstash-%%{+YYYY.MM.dd}"
+        }
+      }
+    EOT
   }
 }
-
-output {
-  stdout { codec => rubydebug }
-  elasticsearch {
-    hosts => ["http://elasticsearch:9200"]
-    index => "syslog-%%{+YYYY.MM.dd}"
-  }
-}
-EOT
-}
-}
-
 #================================================================================================================================================#
 resource "kubernetes_config_map" "elasticsearch_config" {
   metadata {
@@ -1212,8 +1272,8 @@ resource "azurerm_linux_virtual_machine" "keycloak" {
   location            = data.azurerm_resource_group.main.location
   resource_group_name = data.azurerm_resource_group.main.name
   size                = "Standard_D2s_v3"
-  admin_username      = var.admin_username_keycloak
-  admin_password      = var.admin_password_keycloak
+  admin_username      = "keycloackadmin"
+  admin_password      = "Passrd1234643rdf!"
   network_interface_ids = [
     azurerm_network_interface.NIC-keycloak.id
   ]
